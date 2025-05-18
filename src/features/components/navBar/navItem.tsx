@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const pages= [
     "home",
     "about",
@@ -6,7 +8,7 @@ const pages= [
     "products",]
 
 function NavItem({ children }: { children: React.ReactNode }) {
-    let tmp = children?.toString();
+    const tmp = children?.toString();
     // Check if the value is in the pages array
     // If it is, return the value as a link
     if (tmp === undefined) {
@@ -14,17 +16,17 @@ function NavItem({ children }: { children: React.ReactNode }) {
             {children}
         </div> );
     }
-    let value = tmp.split(" ")[0];
+    const value = tmp.split(" ")[0];
 
-    let route = value.toLowerCase();
+    const route = value.toLowerCase();
     if (value !== undefined && pages.includes(route)) {
         if (route === "home") {
             return ( <div>
-                <a href="/">{children}</a>
+                <Link href="/">{children}</Link>
             </div> );
         }
         return ( <div>
-            <a href={"/" + route}>{children}</a>
+            <Link href={"/" + route}>{children}</Link>
         </div> );
     }
 
