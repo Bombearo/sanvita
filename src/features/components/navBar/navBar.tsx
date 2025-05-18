@@ -9,7 +9,7 @@ function NavBar() {
         <div className="navItems">
             <NavItem>Home</NavItem>
             <NavItem>About us</NavItem>
-            <NavItem>Contact</NavItem>
+            <NavItem>Contact us</NavItem>
             <NavItem>Products</NavItem>
             <NavItem>Learn</NavItem>
         </div>
