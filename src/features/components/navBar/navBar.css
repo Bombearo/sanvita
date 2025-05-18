@@ -3,10 +3,14 @@ nav{
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #E3F0D0;
-    color:#738290;
+    background-color: var(--green-section);
+    color:var(--foreground);
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
+.navItems{
+    display: flex;
+    gap: 20px;
+}
