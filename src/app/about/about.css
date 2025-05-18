@@ -1,0 +1,21 @@
+.main-title{
+    color:var(--foreground);
+    font-size:5em;
+
+}
+
+.subheading{
+    color:var(--blue-section);
+    font-size:2em;
+    font-weight: 700;;
+}
+
+.about-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background:var(--dark-green-section);
+    width:100%
+}
