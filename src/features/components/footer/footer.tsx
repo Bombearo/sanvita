@@ -10,7 +10,6 @@ function Footer() {
             
             <div className="footer-shop">
                 <h3>Shop</h3>
-                <Link href="/">Our Brands</Link>
                 <Link href="/about">Accupuncture Needles</Link>
                 <Link href="/contact">Electroacupuncture</Link>
                 <Link href="/products">Cosmo MOQ</Link>
@@ -18,9 +17,9 @@ function Footer() {
             </div>
             <div className="footer-learn">
                 <h3>Learn</h3>
-                <Link href="/learn">Blog</Link>
-                <Link href="/learn">Webinars</Link>
-                <Link href="/learn">Guides</Link>
+                <Link href="/learn">Our Products</Link>
+                <Link href="/learn">Our Brands</Link>
+                <Link href="/learn">Acupuncture Needles</Link>
             </div>
             <div className="footer-info">
                 <h3>Further Information</h3>
