@@ -1,0 +1,26 @@
+.intro{
+    background-color: var(--dark-green-section);
+}
+
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    height:90vh;
+    text-align: center;
+
+}
+
+.hero h1 {
+    font-size: 5rem;
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--blue-section);
+}

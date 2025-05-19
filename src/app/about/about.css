@@ -1,7 +1,6 @@
 .main-title{
-    color:var(--foreground);
+    color:var(--green-text);
     font-size:5em;
-
 }
 
 .subheading{
@@ -16,6 +15,16 @@
     justify-content: center;
     align-items: center;
     padding: 20px;
-    background:var(--dark-green-section);
+    background:var(--blue-2);
     width:100%
+}
+
+.about-container > h2{
+
+    color: var(--green-text);
+}
+
+.about-container > p{
+    font-weight: 400;
+
 }
