@@ -4,7 +4,7 @@ nav{
     align-items: center;
     padding: 10px 20px;
     background-color: var(--green-section);
-    color:var(--foreground);
+    color:var(--green-text);
     position: sticky;
     top: 0;
     z-index: 1000;

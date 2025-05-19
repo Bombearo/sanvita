@@ -1,3 +1,5 @@
+import "./home.css"
+
 
 export default function Home() {
   return (
@@ -10,8 +12,8 @@ export default function Home() {
         </p>
       </div>
     </div>
-    <div>
-      About us
+    <div className="intro">
+      Test
 
     </div>
     </main>

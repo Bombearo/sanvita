@@ -4,6 +4,7 @@ position: relative;
 display:flex;
 flex-direction:column;
 margin:0px;
+color: var(--foreground);
 }
 
 footer > div{
@@ -18,7 +19,7 @@ h3{
     line-height: 120%;
     /* identical to box height, or 29px */
     letter-spacing: -0.02em;
-    color: #738290;
+    color: var(--foreground);
 }
 
 
