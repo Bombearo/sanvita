@@ -1,5 +1,6 @@
 import "./section.css"
 import Link from "next/link";
+import Carousel from "../carousel/carousel";
 
 interface SectionProps {
     title: string;
@@ -26,10 +27,7 @@ function Section({ title, content, buttonText, buttonLink, media, reverse }: Sec
                 </div>
                     {media && media.length > 0 && (
                         <div className="section-media">
-                            <video autoPlay controls muted className="section-video">
-                                <source src={media[0]} type="video/mp4" />
-                                Your browser does not support the video tag.
-                            </video>
+                            <Carousel items={media} />
                         </div>
                     )}
                 </div>
