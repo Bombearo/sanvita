@@ -19,25 +19,26 @@ export default function Home() {
 
   const heroStyle: Properties = {
       height: '100vh', 
-      width: '100vw', 
+      maxHeight:"600px",
+      width: '50vw', 
       backgroundSize: 'contain', 
-      backgroundPosition: 'right',
+      backgroundPosition: 'bottom',
       backgroundRepeat: 'no-repeat',
       position: 'absolute',
-      top: 0,
-      left: 0,
+      bottom:"0px",
       zIndex: -1,
-      mixBlendMode: 'multiply' as Properties['mixBlendMode']
+      mixBlendMode: 'multiply' as Properties['mixBlendMode'],
+      margin: '0 auto',
+      marginTop:"auto",
   }
 
   return (
     <main>
-    <div className="grid min-h-screen grid-cols-1 grid-rows-[1fr_auto] gap-4 p-4">
-      <div className="hero flex flex-col items-center justify-center gap-4">
+    <div className="hero-container">
+      <div className="hero flex flex-col items-center justify-center">
         <div style={
           { backgroundImage: `url('/images/hero.png')`,
             ...heroStyle,
-            transform: "rotate(90deg)"
             }
         }></div>
         <h1 className="text-4xl font-bold">Welcome to Sanvita</h1>

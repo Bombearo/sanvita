@@ -3,6 +3,10 @@
     width:100%;
     height:100%;
     overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    justify-content: flex-end;
+    
 }
 
 .carousel-track{
@@ -12,13 +16,20 @@
 
 .carousel-item{
     min-width:100%;
+    height:100%;
     display:none;
     overflow: hidden;
+    margin: auto;
+    justify-content: center;
 
 }
 
+.carousel-item > img{
+    mix-blend-mode: multiply;
+}
+
 .active{
-    display:block;
+    display:flex;
 }
 .carousel-dot{
     height:10px;
@@ -38,6 +49,7 @@
 .carousel-controls{
     display:flex;
     justify-content:space-between;
+    position:relative
 }
 
 .carousel-button{

@@ -29,7 +29,7 @@ function Carousel({items}: CarouselProps) {
             <div className="carousel-track">
                 {items.map((item, index) => (
                     <div key={index} className={`carousel-item ${currentIndex === index ? 'active' : ''}`}>
-                        {item.endsWith('.jpg') || item.endsWith('.png') ? (
+                        {item.endsWith('.jpg') || item.endsWith('.png') || item.endsWith('.jpeg') ? (
                             <img src={item} alt={`Carousel item ${index}`} className="section-image" />
                         ) : item.endsWith('.mp4') ? (
                             <video autoPlay controls muted className="section-video">
