@@ -6,7 +6,7 @@ export default function Home() {
       <div className="flex flex-col items-center justify-center gap-4">
         <h1 className="text-4xl font-bold">Welcome to Sanvita</h1>
         <p className="text-lg text-gray-600">
-          Slogan goes here
+          The UK's leading provider of Hwato acupuncture needles
         </p>
       </div>
     </div>

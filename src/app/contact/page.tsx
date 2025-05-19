@@ -4,23 +4,26 @@ function Contact() {
     return (
     <div className="contact">
         <main className="contact-container">
-            <h1 className="main-title">Contact us</h1>
+            <div className="contact-heading">
+                <h1 className="contact-title">Contact us</h1>          
+            </div>
+            
 
             <div className="contact-form">
                 <form>
                     <div className="top-line">
-                    <div className="form-group">
-                        <label htmlFor="name">Name</label>
-                        <input type="text" id="name" name="name" required />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="email">Email</label>
-                        <input type="email" id="email" name="email" required />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="order-ref">Order Reference (if applicable)</label>
-                        <input type="text" id="order-ref" name="order-ref" />
-                    </div>
+                        <div className="form-group">
+                            <label htmlFor="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Enter your name" required />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="someone@example.com" required />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="order-ref">Order Reference (if applicable)</label>
+                            <input type="text" id="order-ref" name="order-ref" />
+                        </div>
                     </div>
 
                     <div>
@@ -36,15 +39,17 @@ function Contact() {
 
                     <div className="form-group">
                         <label htmlFor="subject">Subject</label>
-                        <input type="text" id="subject" name="subject" required />
+                        <input type="text" id="subject" name="subject" placeholder="Enter the subject of your enquiry" required />
                     </div>
 
                     <div className="form-group">
                         <label htmlFor="message">Message</label>
-                        <textarea id="message" name="message" required></textarea>
+                        <textarea id="message" name="message" placeholder="Enter your message" required></textarea>
+                    </div>
+                    <div className="button-container">
+                        <button type="submit">Send Message</button>
                     </div>
                     
-                    <button type="submit">Send Message</button>
                 </form>
             </div>
             </main>

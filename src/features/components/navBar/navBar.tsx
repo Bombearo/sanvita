@@ -1,10 +1,13 @@
 import NavItem from "./navItem";
 import './navBar.css';
+import Link from "next/link";
 
 function NavBar() {
     return ( <nav className="navbar">
         <div className="logo">
+            <Link href="/">
             <img src="/logo.svg" alt="Logo" />
+            </Link>
         </div>
         <div className="navItems">
             <NavItem>Home</NavItem>
