@@ -19,7 +19,9 @@ function Section({ title, content, buttonText, buttonLink, media, reverse }: Sec
         <section className="section">
             <div className={`section-container ${reverse ? "reverse" : ""}`}>
                 <div className="section-content">
-                    <h2 className="section-title">{title}</h2>
+                    <div>
+                        <h2 className="section-title">{title}</h2>
+                    </div>
                     {content.map((paragraph, index) => (
                         <p key={index} className="section-paragraph">{paragraph}</p>
                     ))}

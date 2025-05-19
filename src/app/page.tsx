@@ -5,8 +5,7 @@ export default function Home() {
   const videoSrc = "/videos/sanvita.mp4";
 
   const videos = [
-    videoSrc,
-    "/images/hero.png",]
+    videoSrc,]
 
   const paragraphs = [
     "At Sanvita Health, we offer only the finest products in the world.",
