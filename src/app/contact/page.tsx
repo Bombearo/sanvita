@@ -6,6 +6,10 @@ function Contact() {
         <main className="contact-container">
             <div className="contact-heading">
                 <h1 className="contact-title">Contact us</h1>          
+                
+            </div>
+            <div>
+                
             </div>
             
 
@@ -52,6 +56,7 @@ function Contact() {
                     
                 </form>
             </div>
+            <p>Sanvita Health Ltd is MHRA registered UK based importer for Suzhou Medical Appliance Factory (Hwato)</p>
             </main>
             </div>);
 }

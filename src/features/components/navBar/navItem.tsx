@@ -5,7 +5,8 @@ const pages= [
     "about",
     "contact",
     "shop",
-    "products",]
+    "products",
+    "learn",]
 
 function NavItem({ children }: { children: React.ReactNode }) {
     const tmp = children?.toString();
