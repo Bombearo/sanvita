@@ -31,8 +31,8 @@ export default function About() {
                 <Section
                     title="HwaTo"
                     content={aboutHwaTo}
-                    buttonText="Learn More"
-                    buttonLink="/about/hwato"
+                    buttonText="View Products"
+                    buttonLink="/products"
                     media={["/images/hwato.jpeg","/images/HQ.png"]}
                     reverse={true}/>
             </main>

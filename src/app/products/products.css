@@ -1,0 +1,14 @@
+.product-button{
+    background-color: var(--foreground);
+    color: var(--background);
+    border: none;
+    border-radius: 1rem;
+    padding: 1em 2em;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.product-button:hover{
+    background-color: var(--dark-green-section);
+}
