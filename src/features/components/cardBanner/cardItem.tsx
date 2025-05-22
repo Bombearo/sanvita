@@ -1,4 +1,5 @@
 import "./cardItem.css";
+import Image from "next/image";
 
 interface CardItemProps {
     title: string;
@@ -10,7 +11,7 @@ interface CardItemProps {
 function CardItem({ title, image, description, link }: CardItemProps) {
     return (
         <div className="card-item">
-            {image && <a href={link}><img src={image} alt={title} className="card-image" /></a>}
+            {image && <a href={link}><Image src={image} alt={title} className="card-image" fill={true}/></a>}
             <h3 className="card-title">{title}</h3>
             {description && <p className="card-description">{description}</p>}
         </div>

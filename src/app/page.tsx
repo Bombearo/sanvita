@@ -40,18 +40,18 @@ export default function Home() {
   const partners = [
     {
       title: "China Academy of Chinese Medical Sciences",
-      image: "http://en.cacms.ac.cn/cmsen/template/images/logo.png",
+      image: "",
       link: "http://en.cacms.ac.cn/",
 
     },
     {
       title: "Peking University Health Science Centre",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1teXeTAVaR08l4AtxTJBYqgpLXiQiMKT-mQ&s",
+      image: "",
       link: "https://e.bjmu.edu.cn/",
     },
     {
       title: "Nanjing & Shanghai University of TCM",
-      image: "https://www.njucm.edu.cn/english/images/logo.png",
+      image: "",
       link: "https://www.njucm.edu.cn/english/index.html",
     },
     {

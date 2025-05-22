@@ -1,4 +1,5 @@
 import ShowcaseText from "./showcaseText";
+import Image from "next/image";
 import './productShowcase.css';
 interface ProductShowcaseProps {
     title: string;
@@ -23,7 +24,7 @@ function ProductShowcase({ title, description, imageUrl, paragraphs }: ProductSh
             <div className="product-middle">
                 <h1 className="product-title">{title}</h1>
                 <p className="product-description">{description}</p>
-                <img src={imageUrl} alt="Product" className="product-image" />
+                <Image src={imageUrl} alt="Product" className="product-image" width={1000} height={1000}/>
                 <ShowcaseText text={paragraphs[2]}/>
 
             </div>

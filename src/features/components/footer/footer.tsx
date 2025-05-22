@@ -1,10 +1,11 @@
 import Link from "next/link";
 import "./Footer.css";
+import Image from "next/image";
 
 function Footer() {
     return (<footer className="footer">
         <div className="footer-decoration" >
-            <img src="/footer.svg" alt="Decoration" />
+            <Image src="/footer.svg" alt="Decoration" height={100} width={100}/>
         </div>
         <div className="footer-content">
             

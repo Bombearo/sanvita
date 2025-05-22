@@ -1,12 +1,13 @@
 import NavItem from "./navItem";
 import './navBar.css';
 import Link from "next/link";
+import Image from "next/image";
 
 function NavBar() {
     return ( <nav className="navbar">
         <div className="logo">
             <Link href="/">
-            <img src="/logo.svg" alt="Logo" />
+            <Image src="/logo.svg" alt="Logo" width={100} height={100}/>
             </Link>
         </div>
         <div className="navItems">
