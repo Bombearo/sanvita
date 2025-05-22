@@ -2,10 +2,10 @@ import "./about.css";
 import Section from "@/features/components/section/section";
 import GridSection from "@/features/components/gridSection/gridSection";
 
-interface ButtonProps{
+/*interface ButtonProps{
     text:string;
     buttonLink:string;
-}
+}*/
 
 const aboutSanvita = [
     "Sanvita Health is a leading provider of acupuncture and wellness solutions, dedicated to improving the health and well-being of our clients.",

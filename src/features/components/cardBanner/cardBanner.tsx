@@ -11,7 +11,8 @@ function CardBanner({ title, content, cardItems }: CardBannerProps) {
     return (
         <div className="card-banner">
             <div className="banner-title">
-                <h2>{title}</h2>
+                {title && <h2>{title}</h2>}
+                {content && <p>{content}</p>}
             </div>
             
             <div className="banner-content">
