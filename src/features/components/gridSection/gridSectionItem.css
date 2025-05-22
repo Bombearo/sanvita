@@ -1,0 +1,24 @@
+.grid-section-item{
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    padding: 1rem;
+    border-radius: 1rem;
+    border: 1px solid var(--green-section);
+}
+
+.grid-section-item-title {
+  font-weight: 700;
+
+  width: auto;
+  display: inline-block;
+  border-radius: 1em;
+
+  text-align: left;
+}
+
+.grid-section-item-description {
+  font-size: 1rem;
+  color: var(--dark-gray);
+}

@@ -1,9 +1,10 @@
 
 .product-showcase {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: stretch;
+    align-items: stretch;
     padding: 2rem;
+    
 }
 
 .product-left,
@@ -11,8 +12,9 @@
 .product-right {
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     flex: 1;
     padding: 1rem;
 }
@@ -32,8 +34,8 @@
 }
 
 .product-image {
-    max-width: 100%;
-    height: auto;
+    width:100%;
+    max-width: 1000px;
 }
 
 .product-paragraph {
