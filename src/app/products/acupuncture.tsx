@@ -74,7 +74,7 @@ function AcupuncturePage() {
             <ProductShowcase
                 title="What makes Hwato needles UNIQUE?"
                 description="The quality of our needles is unmatched."
-                imageUrl="/images/hq.png"
+                imageUrl="/images/HQ.png"
                 paragraphs={[
                     "Our painless insertion",
                     "High manufacturing standards",

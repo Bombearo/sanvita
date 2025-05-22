@@ -1,17 +1,15 @@
+"use client";
 import "./contact.css";
 
 function Contact() {
     return (
-    <div className="contact">
-        <main className="contact-container">
+    <main className="contact">
+        <div className="contact-container">
             <div className="contact-heading">
                 <h1 className="contact-title">Contact us</h1>          
                 
             </div>
-            <div>
-                
-            </div>
-            
+         
 
             <div className="contact-form">
                 <form>
@@ -57,8 +55,8 @@ function Contact() {
                 </form>
             </div>
             <p>Sanvita Health Ltd is MHRA registered UK based importer for Suzhou Medical Appliance Factory (Hwato)</p>
-            </main>
-            </div>);
+            </div>
+        </main>);
 }
 
 export default Contact;
