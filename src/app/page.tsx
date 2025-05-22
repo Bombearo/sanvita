@@ -1,6 +1,9 @@
+import CardBanner from "@/features/components/cardBanner/cardBanner";
 import "./home.css"
 import Section from "@/features/components/section/section";
 import type { Properties } from "csstype";
+
+
 export default function Home() {
   const videoSrc = "/videos/sanvita.mp4";
 
@@ -32,6 +35,22 @@ export default function Home() {
       marginTop:"auto",
   }
 
+  const partners = [
+    {
+      title: "Partner 1",
+      description: "Description for Partner 1",
+      image: "/images/partner1.png",
+      link: "/partners/partner1",
+
+    },
+    {
+      title: "Partner 2",
+      description: "Description for Partner 2",
+      image: "/images/partner2.png",
+      link: "/partners/partner2",
+    }
+  ]
+
   return (
     <main>
     <div className="hero-container">
@@ -54,6 +73,7 @@ export default function Home() {
       <Section title="We are Sanvita" content={paragraphs} buttonText="Learn More" buttonLink="/about" media={videos}/>
 
     </div>
+    <CardBanner title="Our Partners" cardItems={partners} />
     </main>
     
   );
