@@ -1,7 +1,9 @@
 import CardBanner from "@/features/components/cardBanner/cardBanner";
 import "./home.css"
 import Section from "@/features/components/section/section";
+import GridSection from "@/features/components/gridSection/gridSection";
 import type { Properties } from "csstype";
+import { GridSectionItemProps } from "@/features/components/gridSection/gridSectionItem";
 
 
 export default function Home() {
@@ -37,17 +39,44 @@ export default function Home() {
 
   const partners = [
     {
-      title: "Partner 1",
-      description: "Description for Partner 1",
-      image: "/images/partner1.png",
-      link: "/partners/partner1",
+      title: "China Academy of Chinese Medical Sciences",
+      image: "http://en.cacms.ac.cn/cmsen/template/images/logo.png",
+      link: "http://en.cacms.ac.cn/",
 
     },
     {
-      title: "Partner 2",
-      description: "Description for Partner 2",
-      image: "/images/partner2.png",
-      link: "/partners/partner2",
+      title: "Peking University Health Science Centre",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1teXeTAVaR08l4AtxTJBYqgpLXiQiMKT-mQ&s",
+      link: "https://e.bjmu.edu.cn/",
+    },
+    {
+      title: "Nanjing & Shanghai University of TCM",
+      image: "https://www.njucm.edu.cn/english/images/logo.png",
+      link: "https://www.njucm.edu.cn/english/index.html",
+    },
+    {
+      title: "WFAS",
+      image: "/images/partner4.png",
+      link: "/partners/partner4",
+    }
+  ]
+
+  const globalReach: GridSectionItemProps[] = [
+    {
+      title: "Markets",
+      description: "Our markets include North America, Europe, Australia, Southeast Asia, Middle East, South America"
+    },
+    {
+      title: "Certifications",
+      description: "We have certifications in CE, FDA, TGA, ISO 13485"
+    },
+    {
+      title: "Global Reach",
+      description: "We serve up to 183+ different countries around the world"
+    },
+    {
+      title: "Other Perks",
+      description: "Customized packaging and multilingual support"
     }
   ]
 
@@ -73,6 +102,7 @@ export default function Home() {
       <Section title="We are Sanvita" content={paragraphs} buttonText="Learn More" buttonLink="/about" media={videos}/>
 
     </div>
+    <GridSection title="Global Reach and Certifications" gridItems={globalReach} mediaItems={["/images/HQ.png"]} />
     <CardBanner title="Our Partners" cardItems={partners} />
     </main>
     

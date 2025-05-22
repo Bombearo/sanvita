@@ -1,5 +1,6 @@
 import ProductShowcase from "@/features/components/productShowcase/productShowcase";
 import GridSection from "@/features/components/gridSection/gridSection";
+import CardBanner from "@/features/components/cardBanner/cardBanner";
 
 const mediaItems = [
     "/images/products/needle1.png",
@@ -34,12 +35,42 @@ const gridItems = [
     }*/
 ];
 
+const specifications = [
+    {
+        title: "Gold Needles",
+        description: "Our gold needles are made from high quality stainless steel and are manufactured in a fully automated factory. They are designed for maximum comfort and precision at a large scale.",
+    },
+    {
+        title: "Handcrafted Premium Sets",
+        description: "Our handcrafted premium sets are made from high quality stainless steel and are manufactured in a fully automated factory. They are designed for maximum comfort and precision at a large scale.",
+    }
+]
+
+const brands = [
+    {
+        title: "Hwato",
+
+
+    },
+    {
+        title:"Tony",
+
+    }
+
+]
+
 function AcupuncturePage() {
     return (
         <div>
             <h1>Acupuncture</h1>
             <p>Welcome to the Acupuncture page!</p>
+
+            <CardBanner
+                title="Acupuncture Needles"
+                cardItems={brands}
+                />
             <GridSection title="Our Needles" mediaItems={mediaItems} gridItems={gridItems} />
+            <CardBanner title="Special Specifications" cardItems={specifications} />
             <ProductShowcase
                 title="What makes Hwato needles UNIQUE?"
                 description="The quality of our needles is unmatched."

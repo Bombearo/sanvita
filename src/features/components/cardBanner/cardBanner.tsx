@@ -10,7 +10,10 @@ interface CardBannerProps {
 function CardBanner({ title, content, cardItems }: CardBannerProps) {
     return (
         <div className="card-banner">
-            <h2 className="banner-title">{title}</h2>
+            <div className="banner-title">
+                <h2>{title}</h2>
+            </div>
+            
             <div className="banner-content">
                 {cardItems?.map((item, index) => (
                     <CardItem key={index} {...item} />
