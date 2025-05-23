@@ -4,6 +4,7 @@ import Section from "@/features/components/section/section";
 import GridSection from "@/features/components/gridSection/gridSection";
 import type { Properties } from "csstype";
 import { GridSectionItemProps } from "@/features/components/gridSection/gridSectionItem";
+import QuickInfo from "@/features/components/quickInfo/quickInfo";
 
 
 export default function Home() {
@@ -80,6 +81,47 @@ export default function Home() {
     }
   ]
 
+  const quickInfo = [
+    {
+      bodyText:"Countries Served",
+      boldText:"183+"
+    },
+    {
+      bodyText:"Annual Needle Output",
+      boldText:"3.8 billion"
+    },
+    {
+      bodyText:"Product Categories",
+      boldText:"40+"
+    },
+    {
+      bodyText:"Lead drafter of 1728:2014 - Sterile Acupuncture Needles for Single Use",
+      boldText:"ISO"
+    },
+    {
+      bodyText:"Market Share",
+      boldText:"55%"
+    },
+    {bodyText:"Valid Patents",
+      boldText:"155"
+    }
+  ]
+
+  const manufacturing = [
+    {
+      title: "Manufacturing Capability",
+      description: "State-of-the-art facilities with advanced technology"
+    },
+    {
+      title: "Quality Control",
+      description: "Rigorous testing and quality assurance processes"
+    },
+    {
+      title: "Sustainability",
+      description: "Commitment to environmentally friendly practices"
+    }
+  ]
+
   return (
     <main>
     <div className="hero-container">
@@ -89,21 +131,31 @@ export default function Home() {
             ...heroStyle,
             }
         }></div>
-        <h1 className="text-4xl font-bold">Welcome to Sanvita</h1>
-        <p className="text-lg text-gray-600">
-          Let Life and Health benefit the wisdom of Chinese Medicine
+        <div className = "hero-text">
+          <div className="hero-welcome">
+          <h1 className="text-8xl font-bold">Welcome to Sanvita</h1>
+        </div>
+        <div className="hero-mission">
+          <h2 className="text-4xl font-semibold">Brand Mission</h2>
+          <p className="text-4xl text-gray-600">
+          Let our life and health benefit the wisdom of Chinese Medicine!
         </p>
-        <p className="text-lg text-gray-600">
-          Over 160 Years of Excellence in Acupuncture Innovation
-        </p>
+        </div>  
+        </div>
+       
+        
       </div>
     </div>
     <div className="intro">
       <Section title="We are Sanvita" content={paragraphs} buttonText="Learn More" buttonLink="/about" media={videos}/>
 
     </div>
+    <QuickInfo title="162 Years of Excellence" description="as the Quintessential Leader in Traditional Chinese Medicine Devices" information={quickInfo} logoUrls={["/images/hwato.jpeg","/images/CTB.png"]} />
+
     <GridSection title="Global Reach and Certifications" gridItems={globalReach} mediaItems={["/images/HQ.png"]} />
     <CardBanner title="Our Partners" cardItems={partners} />
+
+    <GridSection title="Manufacturing" gridItems={manufacturing} mediaItems={["/images/HQ.png"]} reverse={true} subtitle="The world's largest production scale of needles"/>
     </main>
     
   );
