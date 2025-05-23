@@ -1,4 +1,5 @@
 import Link from "next/link";
+import "./navItem.css";
 
 const pages= [
     "home",
@@ -22,16 +23,16 @@ function NavItem({ children }: { children: React.ReactNode }) {
     const route = value.toLowerCase();
     if (value !== undefined && pages.includes(route)) {
         if (route === "home") {
-            return ( <div>
-                <Link href="/">{children}</Link>
-            </div> );
+            return ( 
+                <Link href="/"><div className="nav-item">{children}</div></Link>
+            );
         }
-        return ( <div>
-            <Link href={"/" + route}>{children}</Link>
-        </div> );
+        return ( 
+            <Link href={"/" + route}><div className="nav-item">{children}</div></Link>
+        );
     }
 
-    return ( <div>
+    return ( <div className="nav-item">
         {children}
     </div> );
 }
