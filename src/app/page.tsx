@@ -109,16 +109,19 @@ export default function Home() {
 
   const manufacturing = [
     {
-      title: "Manufacturing Capability",
-      description: "State-of-the-art facilities with advanced technology"
+      title: "Production Line and Manufacturing Capability",
+      description: "A production line equipped with advanced technology to produce up to 5 billion acupuncture needles"
     },
     {
-      title: "Quality Control",
-      description: "Rigorous testing and quality assurance processes"
+      title: "Our Workshop",
+      description: "Over 5000 square meters of clean room to produce sterile needles"
     },
     {
-      title: "Sustainability",
-      description: "Commitment to environmentally friendly practices"
+      title: "R&D",
+      description: "Continuous investment in research and development for innovative solutions with over 2000 square meters in our R&D center"
+    },
+    {title: "Production Volume",
+      description:"Over the last 10 years, the production and sales volume of acupuncture needles reached 17.5 billion"
     }
   ]
 
@@ -155,7 +158,7 @@ export default function Home() {
     <GridSection title="Global Reach and Certifications" gridItems={globalReach} mediaItems={["/images/HQ.png"]} />
     <CardBanner title="Our Partners" cardItems={partners} />
 
-    <GridSection title="Manufacturing" gridItems={manufacturing} mediaItems={["/images/HQ.png"]} reverse={true} subtitle="The world's largest production scale of needles"/>
+    <GridSection title="Manufacturing" gridItems={manufacturing} mediaItems={["/images/factory.png"]} reverse={true} subtitle="The world's largest production scale of needles"/>
     </main>
     
   );
