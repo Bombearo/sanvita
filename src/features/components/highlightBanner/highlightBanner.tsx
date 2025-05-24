@@ -1,6 +1,6 @@
 "use client"
 
-import {useState, useEffect} from 'react';
+import {useState, useEffect, use} from 'react';
 import './highlightBanner.css';
 import Image from 'next/image';
 
@@ -19,12 +19,26 @@ function HighlightBanner({ title, items }: HighlightBannerProps) {
     const [currentText, setCurrentText] = useState<string[]>([]);
     const [currentIndex, setCurrentIndex] = useState<number>(0);
 
+    // Move to next item after 3 seconds
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentIndex((prevIndex) => (prevIndex + 1) % items.length);
+        }, 3000);
+
+        return () => clearInterval(interval);
+    }, [items.length]);
+
     useEffect(() => {
         if (items.length > 0) {
             setCurrentTitle(items[0].title);
             setCurrentText(items[0].text);
         }
     }, [items]);
+
+    useEffect(() => {
+        setCurrentTitle(items[currentIndex].title);
+        setCurrentText(items[currentIndex].text);
+    }, [currentIndex, items]);
 
     return (
         <div className="highlight-banner">
