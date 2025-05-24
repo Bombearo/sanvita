@@ -49,12 +49,12 @@ const specifications = [
 const brands = [
     {
         title: "Hwato",
-
+        image: "/images/brands/hwato.png",
 
     },
     {
         title:"Tony",
-
+        image:"/images/brands/tony.jpeg",
     }
 
 ]
