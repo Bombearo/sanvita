@@ -1,6 +1,5 @@
 import CardBanner from "@/features/components/cardBanner/cardBanner";
 import "./home.css"
-import Section from "@/features/components/section/section";
 import GridSection from "@/features/components/gridSection/gridSection";
 import type { Properties } from "csstype";
 import { GridSectionItemProps } from "@/features/components/gridSection/gridSectionItem";
@@ -10,7 +9,7 @@ import QuickInfo from "@/features/components/quickInfo/quickInfo";
 export default function Home() {
   const videoSrc = "/videos/sanvita.mp4";
 
-  const videos = [
+  /*const videos = [
     videoSrc,]
 
   const paragraphs = [
@@ -19,7 +18,7 @@ export default function Home() {
     "Every item is carefully chosen as the best in its class - selected for its quality, integrity, and values.",
 
     "We serve those who choose only the best."
-  ];
+  ];*/
 
  
 
