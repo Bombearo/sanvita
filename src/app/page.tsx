@@ -7,7 +7,7 @@ import QuickInfo from "@/features/components/quickInfo/quickInfo";
 
 
 export default function Home() {
-  const videoSrc = "/videos/sanvita.mp4";
+  //const videoSrc = "/videos/sanvita.mp4";
 
   /*const videos = [
     videoSrc,]
