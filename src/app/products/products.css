@@ -12,3 +12,24 @@
 .product-button:hover{
     background-color: var(--dark-green-section);
 }
+
+.brand-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-bottom: 1px solid var(--light-gray);
+    width: 50%;
+}
+
+.brand-item img{
+    mix-blend-mode: multiply;
+}
+
+.brand-section{
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: var(--blue-2);
+}

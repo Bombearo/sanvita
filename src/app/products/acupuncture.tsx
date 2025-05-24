@@ -1,6 +1,8 @@
 import ProductShowcase from "@/features/components/productShowcase/productShowcase";
 import GridSection from "@/features/components/gridSection/gridSection";
 import CardBanner from "@/features/components/cardBanner/cardBanner";
+import HighlightBanner from "@/features/components/highlightBanner/highlightBanner";
+import Image from "next/image";
 
 const mediaItems = [
     "/images/products/needle1.png",
@@ -50,25 +52,85 @@ const brands = [
     {
         title: "Hwato",
         image: "/images/brands/hwato.png",
-
+        paragraphs :[
+            "High end brand of acupuncture needles",
+            "Popular in the US, Australia, and Europe",
+        ]
     },
     {
         title:"Tony",
         image:"/images/brands/tony.jpeg",
+        paragraphs:[
+            "Middle-end market",
+            "Increase in popularity in Southeast Asia, Europe, South America, and the Middle East"
+        ]
     }
 
 ]
+
+const highlightItems = [
+    {
+        image: "/images/needles/copper.png",
+        title: "Copper Handle",
+        text: [
+            "Handle with moderate hardness",
+            "Good Thermal Conductivity and toughness",
+            "With tail, good for moxibustion and manipulation"
+        ]
+    },
+    {
+        image: "/images/needles/silver.png",
+        title: "Silver-plated Handle",
+        text: [
+            "Upscale appearance",
+            "Handle with moderate hardness",
+            "Good Thermal Conductivity and toughness",
+            "With tail, good for moxibustion and manipulation"
+        ]
+    },
+    {
+        image: "/images/needles/steelSpring.png",
+        title: "Stainless Steel Spring Handle",
+        text: [
+            "Without tail",
+            "Handle with higher hardness",
+            "Good Thermal Conductivity and toughness",
+            "For fast-penetration practitioner and beginner"
+        ]
+    },
+    {
+        image: "/images/needles/steelRing.png",
+        title: "Stainless Steel Loop Handle",
+        text: [
+           "With tail",
+            "Handle with higher hardness",
+            "Good thermal conductivity and toughness",
+            "For fast-penetration practitioner and beginner"
+        ]
+    }
+]
+
+const brandItems = brands.map((brand) => (
+    <div key={brand.title} className="brand-item">
+        
+        <Image src={brand.image} alt={brand.title} width={100} height={100} />
+        <div className="brand-paragraphs">
+            <h3>{brand.title}</h3>
+            {brand.paragraphs.map((paragraph, index) => (
+                <p key={index}>{paragraph}</p>
+            ))}
+        </div>
+    </div>
+));
 
 function AcupuncturePage() {
     return (
         <div>
             <h1>Acupuncture</h1>
             <p>Welcome to the Acupuncture page!</p>
-
-            <CardBanner
-                title="Acupuncture Needles"
-                cardItems={brands}
-                />
+            <div className="brand-section">
+                { brandItems }
+            </div>
             <GridSection title="Our Needles" mediaItems={mediaItems} gridItems={gridItems} />
             <CardBanner title="Special Specifications" cardItems={specifications} />
             <ProductShowcase
@@ -83,6 +145,10 @@ function AcupuncturePage() {
                     "Packaging",
                 ]}
             />
+            <HighlightBanner
+                title="Our Handles"
+                items={highlightItems}
+                />
         </div>
     );
 }
