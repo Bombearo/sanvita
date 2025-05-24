@@ -41,6 +41,7 @@ export default function About() {
                     content={aboutSanvita}
                     buttonText="Learn More"
                     buttonLink="/about"
+                    media={["/videos/sanvita.mp4"]}
                     reverse={false}
                 />
                 <GridSection

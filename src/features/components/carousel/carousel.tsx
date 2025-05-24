@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './carousel.css';
 import Image from 'next/image';
 
@@ -24,6 +24,14 @@ function Carousel({items}: CarouselProps) {
     const goToSlide = (index: number) => {
         setCurrentIndex(index);
     };
+
+    // Iterate through carousel items every 3 seconds
+    useEffect(() => {
+        if (items.length > 1) {
+            const interval = setInterval(nextSlide, 3000);
+            return () => clearInterval(interval);
+        }
+    }, [items.length]);
 
     return (
         <div className="carousel">
