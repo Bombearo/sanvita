@@ -69,8 +69,3 @@
     transition: transform 0.3s ease;
 }
 
-.highlight-item-images-content:hover{
-    transform: translateX(-3rem);
-    transition: transform 0.3s ease;
-}
-
