@@ -129,7 +129,14 @@ function AcupuncturePage() {
             <h1>Acupuncture</h1>
             <p>Welcome to the Acupuncture page!</p>
             <div className="brand-section">
-                { brandItems }
+                <div className="brand-header">
+                    <h2>Our Brands</h2>
+                    <p>We offer a wide range of acupuncture needles under different brands to suit your needs.</p>
+                </div>
+                <div className="brand-section-items">
+                    { brandItems }
+                </div>
+                
             </div>
             <GridSection title="Our Needles" mediaItems={mediaItems} gridItems={gridItems} />
             <CardBanner title="Special Specifications" cardItems={specifications} />
