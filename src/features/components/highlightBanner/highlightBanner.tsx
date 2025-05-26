@@ -64,7 +64,13 @@ function HighlightBanner({ title, items }: HighlightBannerProps) {
                                 setCurrentIndex(index);
                                 setCurrentTitle(item.title);
                                 setCurrentText(item.text);
-                            }}>
+                            }}
+                            onClick= {()=>{
+                                setCurrentIndex(index);
+                                setCurrentTitle(item.title);
+                                setCurrentText(item.text)
+                            }}
+                            >
 
                             <Image src={item.image} alt={item.title} width={1000} height={500}/>
 
