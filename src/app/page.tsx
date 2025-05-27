@@ -23,7 +23,7 @@ export default function Home() {
 
  
 
-  const heroStyle: Properties = {
+  /*const heroStyle: Properties = {
       height: '100vh', 
       maxHeight:"600px",
       width: '50vw', 
@@ -57,7 +57,7 @@ export default function Home() {
       </div>
     </div>
   </div>;
-
+*/
 
 
   const quickInfo = [
