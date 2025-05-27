@@ -1,6 +1,6 @@
 .quick-info{
 
-    background: linear-gradient(var(--dark-green-section), var(--background));
+    background: linear-gradient(var(--green-section),var(--background));
     height:100%
 }
 

@@ -67,3 +67,25 @@
     font-weight: 400;
     color: var(--blue-section);
 }
+
+.welcome-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    background: linear-gradient(var(--blue-2), var(--background));
+}
+
+.welcome-container h1{
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+.welcome-container p{
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--text-color);
+    max-width: 80vw;;
+}

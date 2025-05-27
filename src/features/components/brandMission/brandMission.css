@@ -1,0 +1,24 @@
+.brand-mission{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background:linear-gradient( var(--background),var(--green-section));
+    height:50vh
+}
+
+.brand-mission h2{
+    font-size: 5rem;
+    font-weight: 700;
+    color: var(--green-text);
+    margin-bottom: 1rem;
+}
+.brand-mission p{
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--foreground);
+    text-align: center;
+    max-width: 800px;
+    font-family: 'Times New Roman', Times, serif;
+}

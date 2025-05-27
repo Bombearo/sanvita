@@ -1,6 +1,8 @@
 import "./about.css";
 import Section from "@/features/components/section/section";
 import GridSection from "@/features/components/gridSection/gridSection";
+import CardBanner from "@/features/components/cardBanner/cardBanner";
+import { GridSectionItemProps } from "@/features/components/gridSection/gridSectionItem";
 
 /*interface ButtonProps{
     text:string;
@@ -27,6 +29,67 @@ const gridItems = [
         description: "By combining decades of expertise with international quality standards (ISO), the company supports the global growth of TCM and offers trusted tools to practitioners worldwide."
     }
 ]
+
+const manufacturing = [
+    {
+      title: "Production Line and Manufacturing Capability",
+      description: "A production line equipped with advanced technology to produce up to 5 billion acupuncture needles"
+    },
+    {
+      title: "Our Workshop",
+      description: "Over 5000 square meters of clean room to produce sterile needles"
+    },
+    {
+      title: "R&D",
+      description: "Continuous investment in research and development for innovative solutions with over 2000 square meters in our R&D center"
+    },
+    {title: "Production Volume",
+      description:"Over the last 10 years, the production and sales volume of acupuncture needles reached 17.5 billion"
+    }
+  ]
+
+  const partners = [
+    {
+      title: "China Academy of Chinese Medical Sciences",
+      image: "",
+      link: "http://en.cacms.ac.cn/",
+
+    },
+    {
+      title: "Peking University Health Science Centre",
+      image: "",
+      link: "https://e.bjmu.edu.cn/",
+    },
+    {
+      title: "Nanjing & Shanghai University of TCM",
+      image: "",
+      link: "https://www.njucm.edu.cn/english/index.html",
+    },
+    {
+      title: "WFAS",
+      image: "/images/partner4.png",
+      link: "/partners/partner4",
+    }
+  ]
+
+  const globalReach: GridSectionItemProps[] = [
+    {
+      title: "Markets",
+      description: "Our markets include North America, Europe, Australia, Southeast Asia, Middle East, South America"
+    },
+    {
+      title: "Certifications",
+      description: "We have certifications in CE, FDA, TGA, ISO 13485"
+    },
+    {
+      title: "Global Reach",
+      description: "We serve up to 183+ different countries around the world"
+    },
+    {
+      title: "Other Perks",
+      description: "Customized packaging and multilingual support"
+    }
+  ]
 export default function About() {
     return (
         <div className="">
@@ -50,6 +113,12 @@ export default function About() {
                     button={{ text: "View Products", buttonLink: "/products" }}
                     mediaItems={["/images/hwato.jpeg","/images/HQ.png"]}
                 />
+
+                <GridSection title="Global Reach and Certifications" gridItems={globalReach} mediaItems={["/images/HQ.png"]} />
+    <CardBanner title="Our Partners" cardItems={partners} />
+
+    <GridSection title="Manufacturing" gridItems={manufacturing} mediaItems={["/images/factory.png"]} reverse={true} subtitle="The world's largest production scale of needles"/>
+    
             </main>
         </div>
     );

@@ -4,6 +4,9 @@ import GridSection from "@/features/components/gridSection/gridSection";
 import type { Properties } from "csstype";
 import { GridSectionItemProps } from "@/features/components/gridSection/gridSectionItem";
 import QuickInfo from "@/features/components/quickInfo/quickInfo";
+import BrandMission from "@/features/components/brandMission/brandMission";
+
+const currentYear = new Date().getFullYear();
 
 
 export default function Home() {
@@ -37,96 +40,7 @@ export default function Home() {
       marginTop:"auto",
   }
 
-  const partners = [
-    {
-      title: "China Academy of Chinese Medical Sciences",
-      image: "",
-      link: "http://en.cacms.ac.cn/",
-
-    },
-    {
-      title: "Peking University Health Science Centre",
-      image: "",
-      link: "https://e.bjmu.edu.cn/",
-    },
-    {
-      title: "Nanjing & Shanghai University of TCM",
-      image: "",
-      link: "https://www.njucm.edu.cn/english/index.html",
-    },
-    {
-      title: "WFAS",
-      image: "/images/partner4.png",
-      link: "/partners/partner4",
-    }
-  ]
-
-  const globalReach: GridSectionItemProps[] = [
-    {
-      title: "Markets",
-      description: "Our markets include North America, Europe, Australia, Southeast Asia, Middle East, South America"
-    },
-    {
-      title: "Certifications",
-      description: "We have certifications in CE, FDA, TGA, ISO 13485"
-    },
-    {
-      title: "Global Reach",
-      description: "We serve up to 183+ different countries around the world"
-    },
-    {
-      title: "Other Perks",
-      description: "Customized packaging and multilingual support"
-    }
-  ]
-
-  const quickInfo = [
-    {
-      bodyText:"Countries Served",
-      boldText:"183+"
-    },
-    {
-      bodyText:"Annual Needle Output",
-      boldText:"3.8 billion"
-    },
-    {
-      bodyText:"Product Categories",
-      boldText:"40+"
-    },
-    {
-      bodyText:"Lead drafter of 1728:2014 - Sterile Acupuncture Needles for Single Use",
-      boldText:"ISO"
-    },
-    {
-      bodyText:"Market Share",
-      boldText:"55%"
-    },
-    {bodyText:"Valid Patents",
-      boldText:"155"
-    }
-  ]
-
-  const manufacturing = [
-    {
-      title: "Production Line and Manufacturing Capability",
-      description: "A production line equipped with advanced technology to produce up to 5 billion acupuncture needles"
-    },
-    {
-      title: "Our Workshop",
-      description: "Over 5000 square meters of clean room to produce sterile needles"
-    },
-    {
-      title: "R&D",
-      description: "Continuous investment in research and development for innovative solutions with over 2000 square meters in our R&D center"
-    },
-    {title: "Production Volume",
-      description:"Over the last 10 years, the production and sales volume of acupuncture needles reached 17.5 billion"
-    }
-  ]
-
-  return (
-    <main>
-    <div className="hero-container">
+  const hero =<div className="hero-container">
       <div className="hero flex flex-col items-center justify-center">
         <div style={
           { backgroundImage: `url('/images/hero.png')`,
@@ -138,23 +52,56 @@ export default function Home() {
           <h1 className="text-8xl font-bold">Welcome to Sanvita</h1>
         </div>
         <div className="hero-mission">
-          <h2 className="text-4xl font-semibold">Brand Mission</h2>
-          <p className="text-4xl text-gray-600">
-          Let our life and health benefit the wisdom of Chinese Medicine!
-        </p>
-        </div>  
+          <p className="text-2xl font-semibold">
+            Your Trusted Partner in Traditional Chinese Medicine Devices
+          </p>
         </div>
-       
-        
       </div>
     </div>
-    
+  </div>;
+
+
+
+  const quickInfo = [
+    {
+      bodyText:"Countries Served",
+      boldText:"183+"
+    },
+    {
+      bodyText:"Annual Needle Output",
+      boldText:"4.5 billion"
+    },
+    {
+      bodyText:"Product Categories Covered",
+      boldText:"40"
+    },
+    {
+      bodyText:"of high quality and safety standard compliant products. Certified since 1997 ",
+      boldText:`${currentYear - 1997} years`
+    },
+    {
+      bodyText:"Market Share",
+      boldText:"60%"
+    },
+    {bodyText:"Valid Patents",
+      boldText:"155"
+    }
+  ]
+
+  
+
+  return (
+    <main>
+      <div className="welcome-container">
+        <h1>Welcome to Sanvita!</h1>
+        <p>We are your trusted partner in Traditional Chinese Medicine Devices, and we are committed to providing you with the highest quality products and services.</p>
+        <p>Sanvita Health Ltd is MHRA registered UK based importer for Suzhou Medical Appliance Factory (Hwato)</p>
+            
+      </div>
+    <BrandMission />
     <QuickInfo title="162 Years of Excellence" description="as the Quintessential Leader in Traditional Chinese Medicine Devices" information={quickInfo} logoUrls={["/images/hwato.jpeg","/images/CTB.png"]} />
 
-    <GridSection title="Global Reach and Certifications" gridItems={globalReach} mediaItems={["/images/HQ.png"]} />
-    <CardBanner title="Our Partners" cardItems={partners} />
-
-    <GridSection title="Manufacturing" gridItems={manufacturing} mediaItems={["/images/factory.png"]} reverse={true} subtitle="The world's largest production scale of needles"/>
+    
     </main>
     
   );

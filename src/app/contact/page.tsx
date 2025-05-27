@@ -54,7 +54,6 @@ function Contact() {
                     
                 </form>
             </div>
-            <p>Sanvita Health Ltd is MHRA registered UK based importer for Suzhou Medical Appliance Factory (Hwato)</p>
             </div>
         </main>);
 }
