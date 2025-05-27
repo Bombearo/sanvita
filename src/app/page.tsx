@@ -1,8 +1,6 @@
-import CardBanner from "@/features/components/cardBanner/cardBanner";
+
 import "./home.css"
-import GridSection from "@/features/components/gridSection/gridSection";
 import type { Properties } from "csstype";
-import { GridSectionItemProps } from "@/features/components/gridSection/gridSectionItem";
 import QuickInfo from "@/features/components/quickInfo/quickInfo";
 import BrandMission from "@/features/components/brandMission/brandMission";
 
