@@ -1,6 +1,5 @@
 
 import "./home.css"
-import type { Properties } from "csstype";
 import QuickInfo from "@/features/components/quickInfo/quickInfo";
 import BrandMission from "@/features/components/brandMission/brandMission";
 
