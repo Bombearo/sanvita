@@ -13,6 +13,21 @@
     background-color: var(--dark-green-section);
 }
 
+.brand-showcase{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 2rem;
+    background-color: var(--blue-section);
+}
+
+.brand-image{
+    border-radius: 2rem;
+    width: 20%;
+    background-color: var(--blue-2);
+    padding:1rem;
+}
+
 .brand-item{
     display: flex;
     justify-content: center;

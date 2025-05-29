@@ -68,48 +68,6 @@ const brands = [
 
 ]
 
-const highlightItems = [
-    {
-        image: "/images/needles/copper.png",
-        title: "Copper Handle",
-        text: [
-            "Handle with moderate hardness",
-            "Good Thermal Conductivity and toughness",
-            "With tail, good for moxibustion and manipulation"
-        ]
-    },
-    {
-        image: "/images/needles/silver.png",
-        title: "Silver-plated Handle",
-        text: [
-            "Upscale appearance",
-            "Handle with moderate hardness",
-            "Good Thermal Conductivity and toughness",
-            "With tail, good for moxibustion and manipulation"
-        ]
-    },
-    {
-        image: "/images/needles/steelSpring.png",
-        title: "Stainless Steel Spring Handle",
-        text: [
-            "Without tail",
-            "Handle with higher hardness",
-            "Good Thermal Conductivity and toughness",
-            "For fast-penetration practitioner and beginner"
-        ]
-    },
-    {
-        image: "/images/needles/steelRing.png",
-        title: "Stainless Steel Loop Handle",
-        text: [
-           "With tail",
-            "Handle with higher hardness",
-            "Good thermal conductivity and toughness",
-            "For fast-penetration practitioner and beginner"
-        ]
-    }
-]
-
 const brandItems = brands.map((brand) => (
     <div key={brand.title} className="brand-item">
         
@@ -126,8 +84,6 @@ const brandItems = brands.map((brand) => (
 function AcupuncturePage() {
     return (
         <div>
-            <h1>Acupuncture</h1>
-            <p>Welcome to the Acupuncture page!</p>
             <div className="brand-section">
                 <div className="brand-header">
                     <h2>Our Brands</h2>
@@ -140,22 +96,8 @@ function AcupuncturePage() {
             </div>
             <GridSection title="Our Needles" mediaItems={mediaItems} gridItems={gridItems} />
             <CardBanner title="Special Specifications" cardItems={specifications} />
-            <ProductShowcase
-                title="What makes Hwato needles UNIQUE?"
-                description="The quality of our needles is unmatched."
-                imageUrl="/images/products/products.png"
-                paragraphs={[
-                    "Our painless insertion",
-                    "High manufacturing standards",
-                    "Fully Automated production",
-                    "Inspection",
-                    "Packaging",
-                ]}
-            />
-            <HighlightBanner
-                title="Our Handles"
-                items={highlightItems}
-                />
+            
+            
         </div>
     );
 }
