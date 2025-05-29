@@ -46,6 +46,7 @@ const highlightItems = [
     }
 ]
 
+
 function ProductOptions() {
     const [currentState, setCurrentState] = useState<string>('table');
 

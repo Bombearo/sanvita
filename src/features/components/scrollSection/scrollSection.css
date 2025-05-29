@@ -16,3 +16,7 @@
     scroll-snap-align:start;
     width:50%
 }
+
+swiper-container::part(bullet-active){
+    background-color:var(--blue-section);
+}
