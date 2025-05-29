@@ -20,3 +20,8 @@
 swiper-container::part(bullet-active){
     background-color:var(--blue-section);
 }
+
+.swiper-image{
+    height:100%;
+    mix-blend-mode:multiply;
+}

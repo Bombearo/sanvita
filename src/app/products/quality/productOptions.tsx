@@ -46,6 +46,59 @@ const highlightItems = [
     }
 ]
 
+const productOptions = [
+    {
+        image:"/images/options/productOptions/gold.png",
+        title:"Gold Plated Needles",
+        text: ["Upscale appearance",
+            "100pcs/box, 10000pcs/carton",
+            "Sterilized with EOG"
+        ],
+    },
+    {
+        image:"/images/options/productOptions/hand.png",
+        title:"Hand Needles",
+        text: ["Size: 0.18x7mm and 0.16x7mm",
+            "10 Needles in a foam for easy access",
+            "Sterilised with EOG"
+        ],
+    },
+    {
+        image:"/images/options/productOptions/scalp.png",
+        title:"Scalp needles",
+        text: ["For scalp acupuncture",
+            "15mm short handle",
+            "Sizes available: 0.20x20mm, 0.20x30mm, 0.22x30mm",
+            "100pcs/box, 10000pcs/carton",
+            "Sterilised with EOG"
+        ],
+    },
+    {
+        image:"/images/options/productOptions/detox.png",
+        title:"Detox needles",
+        text: [
+            "For general and facial acupuncture and NADA protocol",
+            "Highly visible handle for easy locating",
+            "Sizes available: 0.20x7mm, 0.20x13mm, 0.22x7mm, 0.22X13mm",
+            "5pcs/box, 500pcs/carton",
+            "Sterilised with EOG"
+        ],
+    },
+    {
+        image:"/images/options/productOptions/tabless.png",
+        title:"Scalp needles",
+        text: ["Tabless design, no mess",
+            "One hand aim and insert application",
+            "Thermal blister package",
+            "Made from surgical stainless steel",
+            "Featured awn-shaped tip for smooth insertion",
+            "100pcs/box, 10000pcs/carton",
+            "Sterilised with EOG"
+        ],
+    },
+
+
+]
 
 function ProductOptions() {
     const [currentState, setCurrentState] = useState<string>('table');
@@ -67,7 +120,7 @@ function ProductOptions() {
                 items={highlightItems}
                 />
                 <ScrollSection
-                items={highlightItems}
+                items={productOptions}
                 ></ScrollSection>
                 </div>;
             case 'grid':
