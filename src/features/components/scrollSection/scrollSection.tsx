@@ -14,22 +14,14 @@ interface ScrollSectionProps {
 }
 
 function ScrollSection({ items }: ScrollSectionProps) {
-    const [currentTitle, setCurrentTitle] = useState<string>(items[0].title);
-    const [currentIndex, setCurrentIndex] = useState<number>(0);
+    const [currentTitle] = useState<string>(items[0].title);
+    const [currentIndex] = useState<number>(0);
 
     if (items.length < 3){
         throw new Error("ScrollSection requires at least 3 items");
     }
 
-    const handleScroll = (direction: 'left' | 'right') => {
-        if (direction === 'right' && currentIndex < items.length - 1) {
-            setCurrentIndex(currentIndex + 1);
-            setCurrentTitle(items[currentIndex + 1].title);
-        } else if (direction === 'left' && currentIndex > 0) {
-            setCurrentIndex(currentIndex - 1);
-            setCurrentTitle(items[currentIndex - 1].title);
-        }
-    };
+
 
 
 

@@ -1,7 +1,6 @@
-import ProductShowcase from "@/features/components/productShowcase/productShowcase";
+
 import GridSection from "@/features/components/gridSection/gridSection";
 import CardBanner from "@/features/components/cardBanner/cardBanner";
-import HighlightBanner from "@/features/components/highlightBanner/highlightBanner";
 import Image from "next/image";
 
 const mediaItems = [
