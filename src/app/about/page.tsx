@@ -94,7 +94,7 @@ export default function About() {
     return (
         <div className="">
             <main className="">
-                <div className="about-container">
+                <div className="head-container">
                     <h1 className="main-title">About us</h1>
                     <h2 className="subheading">At Sanvita, we are dedicated to providing high-quality acupuncture products and services.</h2>
                     <p className="text-lg text-gray-600">Learn more about us and how we are different!</p>
