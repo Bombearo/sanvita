@@ -2,6 +2,9 @@
 "use client";
 import { useState } from 'react';
 import './scrollSection.css';
+import { register } from "swiper/element/bundle";
+register();
+
 interface ScrollSectionItem{
     image: string;
     text: string[];
@@ -31,14 +34,23 @@ function ScrollSection({ items }: ScrollSectionProps) {
             <div className="scroll-section-header">
                 <h3>{currentTitle}</h3>
             </div>
-            <div className="scroll-section-images">
-                {items.map((item,index) => (
-                    <div key={index} className={`scroll-section-item ${currentIndex === index ? 'scroll-active' : ''}`}>
-                        <img src={item.image} alt={item.title} />
-                        
-                    </div>
-                ))}
-            </div>    
+            <swiper-container
+                className="scroll-section-swiper"
+                slides-per-view="3"
+                space-between="10"
+                navigation
+                pagination={{ clickable: true }}
+                scrollbar={{ draggable: true }}
+                loop={true}
+                direction="horizontal"
+                style={{ width: '50%', height: '300px' }}
+                >
+                    {items.map((item, index) => (
+                        <swiper-slide key={index}>
+                            <img src={item.image} alt={item.title} />
+                        </swiper-slide>
+                    ))}
+                </swiper-container>
         </div>
     </div>;
 }
