@@ -19,8 +19,10 @@ const brandItems = () => <div className="brand-showcase">
 function Product() {
     return (
         <div>
-            <h1>Products</h1>
-            <p>Welcome to the Products page!</p>
+            <div className="head-container">
+                <h1>Products</h1>
+            </div>
+            
             <div className="brand-section">
                 <div className="brand-items">
                     {brandItems()}
