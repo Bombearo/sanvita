@@ -10,9 +10,18 @@
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.nav-item:hover{
+.nav-active{
     color: var(--white);
     text-decoration: underline;
     box-sizing: border-box;
     box-shadow: 0 2px 0px var(--dark-green-section);
+}
+
+.dropdown-menu{
+    position:absolute;
+    top:50px
+}
+
+.dropdown-item{
+    background-color:var(--green-section);
 }
