@@ -1,0 +1,33 @@
+.quick-info-item{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding:2rem;
+    border-radius: 1rem;
+
+}
+
+.quick-info-item-bold{
+    font-weight: bold;
+    font-size: 3rem;
+    color:#C2010D;
+}
+
+.quick-info-item-body{
+    display: flex;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+.quick-info-item-body p{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.quick-info-item-bold:hover{
+    color: red;
+    transform:scale(1.1);
+    text-decoration: underline;
+}

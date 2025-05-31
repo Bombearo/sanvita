@@ -1,9 +1,10 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './carousel.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Image from 'next/image';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 interface CarouselProps {
@@ -24,13 +25,21 @@ function Carousel({items}: CarouselProps) {
         setCurrentIndex(index);
     };
 
+    // Iterate through carousel items every 3 seconds
+    useEffect(() => {
+        if (items.length > 1) {
+            const interval = setInterval(nextSlide, 3000);
+            return () => clearInterval(interval);
+        }
+    }, [items.length]);
+
     return (
         <div className="carousel">
             <div className="carousel-track">
                 {items.map((item, index) => (
                     <div key={index} className={`carousel-item ${currentIndex === index ? 'active' : ''}`}>
                         {item.endsWith('.jpg') || item.endsWith('.png') || item.endsWith('.jpeg') ? (
-                            <img src={item} alt={`Carousel item ${index}`} className="section-image" />
+                            <Image src={item} alt={`Carousel item ${index}`} className="section-image" width={500} height={500}/>
                         ) : item.endsWith('.mp4') ? (
                             <video autoPlay controls muted className="section-video">
                                 <source src={item} type="video/mp4" />

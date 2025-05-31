@@ -22,10 +22,14 @@ function Section({ title, content, buttonText, buttonLink, media, reverse }: Sec
                     <div>
                         <h2 className="section-title">{title}</h2>
                     </div>
+                    <div>
                     {content.map((paragraph, index) => (
                         <p key={index} className="section-paragraph">{paragraph}</p>
                     ))}
+                    
+                    </div>
                     <Link href={buttonLink} className="section-button">{buttonText}</Link>
+                    
                 </div>
                     {media && media.length > 0 && (
                         <div className="section-media">

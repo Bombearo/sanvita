@@ -1,10 +1,15 @@
-import "./home.css"
-import Section from "@/features/components/section/section";
-import type { Properties } from "csstype";
-export default function Home() {
-  const videoSrc = "/videos/sanvita.mp4";
 
-  const videos = [
+import "./home.css"
+import QuickInfo from "@/features/components/quickInfo/quickInfo";
+import BrandMission from "@/features/components/brandMission/brandMission";
+
+const currentYear = new Date().getFullYear();
+
+
+export default function Home() {
+  //const videoSrc = "/videos/sanvita.mp4";
+
+  /*const videos = [
     videoSrc,]
 
   const paragraphs = [
@@ -13,11 +18,11 @@ export default function Home() {
     "Every item is carefully chosen as the best in its class - selected for its quality, integrity, and values.",
 
     "We serve those who choose only the best."
-  ];
+  ];*/
 
  
 
-  const heroStyle: Properties = {
+  /*const heroStyle: Properties = {
       height: '100vh', 
       maxHeight:"600px",
       width: '50vw', 
@@ -32,28 +37,68 @@ export default function Home() {
       marginTop:"auto",
   }
 
-  return (
-    <main>
-    <div className="hero-container">
+  const hero =<div className="hero-container">
       <div className="hero flex flex-col items-center justify-center">
         <div style={
           { backgroundImage: `url('/images/hero.png')`,
             ...heroStyle,
             }
         }></div>
-        <h1 className="text-4xl font-bold">Welcome to Sanvita</h1>
-        <p className="text-lg text-gray-600">
-          Let Life and Health benefit the wisdom of Chinese Medicine
-        </p>
-        <p className="text-lg text-gray-600">
-          Over 160 Years of Excellence in Acupuncture Innovation
-        </p>
+        <div className = "hero-text">
+          <div className="hero-welcome">
+          <h1 className="text-8xl font-bold">Welcome to Sanvita</h1>
+        </div>
+        <div className="hero-mission">
+          <p className="text-2xl font-semibold">
+            Your Trusted Partner in Traditional Chinese Medicine Devices
+          </p>
+        </div>
       </div>
     </div>
-    <div className="intro">
-      <Section title="We are Sanvita" content={paragraphs} buttonText="Learn More" buttonLink="/about" media={videos}/>
+  </div>;
+*/
 
-    </div>
+
+  const quickInfo = [
+    {
+      bodyText:"Countries Served",
+      boldText:"183+"
+    },
+    {
+      bodyText:"Annual Needle Output",
+      boldText:"4.5 billion"
+    },
+    {
+      bodyText:"Product Categories Covered",
+      boldText:"40"
+    },
+    {
+      bodyText:"of high quality and safety standard compliant products. Certified since 1997 ",
+      boldText:`${currentYear - 1997} years`
+    },
+    {
+      bodyText:"Market Share",
+      boldText:"60%"
+    },
+    {bodyText:"Valid Patents",
+      boldText:"155"
+    }
+  ]
+
+  
+
+  return (
+    <main>
+      <div className="welcome-container">
+        <h1>Welcome to Sanvita!</h1>
+        <p>We are your trusted partner in Traditional Chinese Medicine Devices, and we are committed to providing you with the highest quality products and services.</p>
+        <p>Sanvita Health Ltd is MHRA registered UK based importer for Suzhou Medical Appliance Factory (Hwato)</p>
+            
+      </div>
+    <BrandMission />
+    <QuickInfo title="162 Years of Excellence" description="as the Quintessential Leader in Traditional Chinese Medicine Devices" information={quickInfo} logoUrls={["/images/hwato.jpeg","/images/CTB.png"]} />
+
+    
     </main>
     
   );

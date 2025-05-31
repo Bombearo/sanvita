@@ -1,13 +1,15 @@
+"use client";
 import "./contact.css";
 
 function Contact() {
     return (
-    <div className="contact">
-        <main className="contact-container">
+    <main className="contact">
+        <div className="contact-container">
             <div className="contact-heading">
                 <h1 className="contact-title">Contact us</h1>          
+                
             </div>
-            
+         
 
             <div className="contact-form">
                 <form>
@@ -52,8 +54,8 @@ function Contact() {
                     
                 </form>
             </div>
-            </main>
-            </div>);
+            </div>
+        </main>);
 }
 
 export default Contact;
