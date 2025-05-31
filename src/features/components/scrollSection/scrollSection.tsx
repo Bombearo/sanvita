@@ -1,10 +1,10 @@
 
 "use client";
-import { useRef, useEffect, useState } from 'react';
+import {  useState } from 'react';
 import './scrollSection.css';
-import { register } from "swiper/element/bundle";
+import {Swiper, SwiperSlide} from "swiper/react";
 import Image from "next/image"
-register();
+
 
 interface ScrollSectionItem{
     image: string;
@@ -19,21 +19,11 @@ interface ScrollSectionProps {
 }
 
 function ScrollSection({ items }: ScrollSectionProps) {
-    const [currentIndex, setCurrentIndex] = useState<number>(0);
-    const swiperElRef = useRef(null);
+    const [currentIndex] = useState<number>(0);
 
     if (items.length < 3){
         throw new Error("ScrollSection requires at least 3 items");
     }
-
-    useEffect(() => {
-        swiperElRef.current?.addEventListener('swiperslidechange', (event: CustomEvent) => {
-            const [swiper] = event.detail;
-            console.log(swiper.realIndex)
-            setCurrentIndex(swiper.realIndex)
-        });
-    },[])
-
 
 
     return <div>
@@ -47,24 +37,23 @@ function ScrollSection({ items }: ScrollSectionProps) {
                         </div>
                     ))}
                 </div>
-                <swiper-container
-                    ref={swiperElRef}
+                <Swiper
                     className="scroll-section-swiper"
-                    slides-per-view="3"
+                    slides-per-view={3}
                     space-between="10"
                     pagination={{ clickable: true }}
                     scrollbar={{ draggable: true }}
                     loop={true}
                     direction="horizontal"
                     style={{ width: '50%', height: '300px' }}
-                    
+                    onSwiper={(swiper) => console.log(swiper)}
                 >
                     {items.map((item, index) => (
-                        <swiper-slide key={index}>
+                        <SwiperSlide key={index}>
                             <Image className="swiper-image" src={item.image} alt={item.title} width={100} height={100}/>
-                        </swiper-slide>
+                        </SwiperSlide>
                     ))}
-                </swiper-container>
+                </Swiper>
             </div>
     </div>;
 }
