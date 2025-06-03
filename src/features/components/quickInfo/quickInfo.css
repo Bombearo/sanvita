@@ -6,7 +6,6 @@
 
 
 .quick-info-title-bold{
-    font-size: 3.5rem;
     color:#C2010D;
 }
 
@@ -32,7 +31,6 @@
     justify-content: space-around;
     align-items: center;
     text-align: center;
-    font-size: 3rem;
     font-weight: 700;
     color: var(--blue-section);
 }
@@ -43,7 +41,6 @@
     align-self: center;
 }
 .quick-info-description{
-    font-size: 1.5rem;
     font-weight: 400;
     text-align: left;
 }

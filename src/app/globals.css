@@ -11,8 +11,8 @@
   --green-text:#02735E;
   --blue-2:#E0F7F1;
 
-  --paragraph-size:10px;
-  --title-size:16px;
+  --paragraph-size:0.65rem;
+  --title-size:1rem;
 }
 
 @theme inline {
@@ -35,6 +35,12 @@ body {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
 
+h1,
+h2,
+h3{
+  font-size:var(--title-size)
+}
+
 
 
 .head-container{
@@ -50,7 +56,6 @@ body {
 .head-container > h1{
 
     color: var(--green-text);
-    font-size:4em;
 }
 
 .head-container > p{
