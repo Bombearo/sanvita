@@ -1,0 +1,26 @@
+table, tr{
+    width:70%;
+    border: 1px solid #ddd;
+}
+
+.length{
+    background-color: #f0f0f0;
+}
+
+td{
+    padding: 0.5rem;
+    text-align: center;
+}
+
+@media screen and (max-width: 1000px) {
+    table, tr{
+        width: 100%;
+    }
+    td{
+        padding: 0.2rem;
+    }
+    .length{
+        font-size: 0.8rem;
+    }
+    
+}

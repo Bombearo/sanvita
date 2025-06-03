@@ -1,8 +1,8 @@
 "use client";
 import { useState } from 'react';
-import Image from 'next/image';
 import HighlightBanner from '@/features/components/highlightBanner/highlightBanner';
 import ScrollSection from '@/features/components/scrollSection/scrollSection';
+import './productOptions.css';
 
 const highlightItems = [
     {
@@ -100,6 +100,79 @@ const productOptions = [
 
 ]
 
+const tableItems = [
+    {
+        diameter: "0.12",
+        gauge: "#44",
+        colourCode: "#00503A",
+        lengthMM: "7",
+        lengthInch: "0.25"
+    },
+    {
+        diameter: "0.14",
+        gauge: "#42",
+        colourCode: "#5DA92B",
+        lengthMM: "13,15",
+        lengthInch: "0.5"
+    },
+    {
+        diameter: "0.16",
+        gauge: "#40",
+        colourCode: "#E70214",
+        lengthMM: "25,30",
+        lengthInch: "1"
+    },
+    {
+        diameter: "0.18",
+        gauge: "#38",
+        colourCode: "#FDEE00",
+        lengthMM: "40",
+        lengthInch: "1.5"
+    },
+    {
+        diameter: "0.20",
+        gauge: "#36",
+        colourCode: "#029DE7",
+        lengthMM: "50",
+        lengthInch: "2"
+    },
+    {
+        diameter: "0.22",
+        gauge: "#34",
+        colourCode: "#EE88B4",
+        lengthMM: "60",
+        lengthInch: "2.5"
+    },
+    {
+        diameter: "0.25",
+        gauge: "#32",
+        colourCode: "#8857A0",
+        lengthMM: "75",
+        lengthInch: "3"
+    },
+    {
+        diameter: "0.30",
+        gauge: "#30",
+        colourCode: "#6D3909",
+        lengthMM: "100",
+        lengthInch: "4"
+    },
+    {
+        diameter: "0.35",
+        gauge: "#28",
+        colourCode: "#671485",
+        lengthMM: "125",
+        lengthInch: "5"
+    },
+    {
+        diameter: "0.40",
+        gauge: "#26",
+        colourCode: "#000",
+        lengthMM: "150",
+        lengthInch: "6"
+    }
+]
+
 function ProductOptions() {
     const [currentState, setCurrentState] = useState<string>('table');
 
@@ -110,8 +183,40 @@ function ProductOptions() {
         switch (currentState) {
             case 'table':
                 return <div style={{ display: 'flex', alignItems: 'center' }}>
-                    <Image src="/images/options/table.png" alt="Table View" width={500} height={300} />
-                    <Image src="/images/options/needles.png" alt="Table View 2" width={500} height={300} />
+
+                    <table style={ {borderCollapse: 'collapse', marginTop: '20px'}}>
+                        <thead>
+                            <tr>
+                                <th colSpan={3} className="diameter">Needle Diameter</th>
+                                <th colSpan={2} className="length">Needle Length</th>
+
+                            </tr>
+                            <tr>
+                                <th className='diameter'>mm</th>
+                                <th className='diameter'>Gauge</th>
+                                <th className='diameter'>Colour Code</th>
+                                <th className='length'>mm</th>
+                                <th className='length'>Inch</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {tableItems.map((item, index) => (
+                                <tr key={index}>
+                                    <td>{item.diameter}</td>
+                                    <td>{item.gauge}</td>
+                                    <td>
+                                    <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+                                        <svg width="16" height="16" viewBox="0 0 16 16" style={{ verticalAlign: 'middle' }}>
+                                            <circle cx="8" cy="8" r="7" fill={item.colourCode} stroke="#ccc" strokeWidth="1" />
+                                        </svg>
+                                    </span></td>
+                                    <td className="length">{item.lengthMM}</td>
+                                    <td className="length">{item.lengthInch}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
                 </div>;
             case 'handles':
                 return <div>
