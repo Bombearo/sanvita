@@ -9,7 +9,10 @@
   --dark-green-section:#C2D8B9;
 
   --green-text:#02735E;
-  --blue-2:#E0F7F1
+  --blue-2:#E0F7F1;
+
+  --paragraph-size:10px;
+  --title-size:16px;
 }
 
 @theme inline {
@@ -31,6 +34,8 @@ body {
   color: var(--green-text);
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
+
+
 
 .head-container{
     display: flex;

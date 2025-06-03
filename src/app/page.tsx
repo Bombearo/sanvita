@@ -73,7 +73,7 @@ export default function Home() {
       boldText:"40"
     },
     {
-      bodyText:"of high quality and safety standard compliant products. Certified since 1997 ",
+      bodyText:"of high quality and safety standard compliant products. CE Certified since 1997 ",
       boldText:`${currentYear - 1997} years`
     },
     {
@@ -85,16 +85,17 @@ export default function Home() {
     }
   ]
 
-  
-
-  return (
-    <main>
-      <div className="welcome-container">
+  /*
+  const home = <div className="welcome-container">
         <h1>Welcome to Sanvita!</h1>
         <p>We are your trusted partner in Traditional Chinese Medicine Devices, and we are committed to providing you with the highest quality products and services.</p>
         <p>Sanvita Health Ltd is MHRA registered UK based importer for Suzhou Medical Appliance Factory (Hwato)</p>
             
       </div>
+  */
+
+  return (
+    <main>
     <BrandMission />
     <QuickInfo title="162 Years of Excellence" description="as the Quintessential Leader in Traditional Chinese Medicine Devices" information={quickInfo} logoUrls={["/images/hwato.jpeg","/images/CTB.png"]} />
 

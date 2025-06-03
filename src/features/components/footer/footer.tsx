@@ -33,8 +33,8 @@ function Footer() {
             <div className="footer-misc">
                 <h3>Sanvita</h3>
                 <p>Official UK importer and distributor of Hwato.</p>
-                <p>Website: <a href="https://www.sanvitahealth.com">www.sanvitahealth.com</a></p>
-                <p>Email: info@sanvitahealth.com</p>
+                <p>Website: <a href="https://www.sanvitahealth.com">www.sanvitahealth.co.uk</a></p>
+                <p>Email: info@sanvitahealth.co.uk</p>
                 <p>Phone: +44 (0) 1234 567890</p>
                 <p>Address: 123 Sanvita Street, London, UK</p>
                 <p>Website built by <a href="https://www.jadenshek.com">Jaden Shek</a></p>
