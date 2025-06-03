@@ -13,6 +13,9 @@
 
   --paragraph-size:0.65rem;
   --title-size:1rem;
+
+  --ipad-width:1000px;
+  --phone-width:600px;
 }
 
 @theme inline {
