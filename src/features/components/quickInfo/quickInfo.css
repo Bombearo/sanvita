@@ -54,7 +54,7 @@
     padding: 2rem;
 }
 
-@media only screen and (max-width:var(--ipad-width)) {
+@media only screen and (max-width:1000px) {
     .quick-info-items{
         display:grid;
         grid-template-columns:1fr 1fr;
@@ -83,7 +83,7 @@
 
 }
 
-@media only screen and (max-width:var(--phone-width)) {
+@media only screen and (max-width:600pc) {
 
     .quick-info-items{
         display:grid;

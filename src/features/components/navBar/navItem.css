@@ -26,7 +26,7 @@
     background-color:var(--green-section);
 }
 
-@media screen and (max-width: var(--ipad-width)) {
+@media screen and (max-width: 1000px) {
     .nav-item {
         padding: 0.5rem 1rem;
         font-size: 1rem;

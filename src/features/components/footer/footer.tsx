@@ -1,5 +1,5 @@
 import Link from "next/link";
-import "./Footer.css";
+import "./footer.css";
 import Image from "next/image";
 
 function Footer() {
