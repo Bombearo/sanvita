@@ -61,7 +61,7 @@ export default function Home() {
 
   const quickInfo = [
     {
-      bodyText:"Countries Served",
+      bodyText:"Countries we export to",
       boldText:"183+"
     },
     {
