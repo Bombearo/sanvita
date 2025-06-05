@@ -1,5 +1,29 @@
-.grid-section {
+    .grid-section {
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin:auto
+    }
+    .grid-section-image {
+        width: 80%;
+        margin:auto;
+    }
+    .grid-section-content {
+        width: 100%;
+        margin-left: 0;
+    }
+    .grid-section-text {
+        grid-template-columns: 1fr;
+    }
+
+
+@media screen and (min-width: 1000px) {
+
+    .grid-section {
     display: flex;
+    flex-direction: row;
     align-items: stretch;
     justify-content: space-evenly;
     padding: 2rem;
@@ -38,4 +62,8 @@
     grid-template-columns: repeat(2, 1fr);
     width:100%;
     gap: 1rem;
+}
+.reverse{
+    flex-direction: row-reverse;
+}
 }

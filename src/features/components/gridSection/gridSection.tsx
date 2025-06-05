@@ -18,7 +18,7 @@ interface GridSectionProps {
 
 function GridSection({ title,gridItems,mediaItems,  reverse, button, subtitle }: GridSectionProps) {
     return (
-        <div className="grid-section container" style={{ flexDirection: reverse ? 'row-reverse' : 'row' }}>
+        <div className={"grid-section container" + (reverse ? " reverse" : "")}>
 
             {mediaItems && mediaItems.length > 0 && (
                 <div className="grid-section-image">
