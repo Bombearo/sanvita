@@ -15,7 +15,7 @@ function NavBar() {
             <Image src="/logo.svg" alt="Logo" width={50} height={50}/>
             </Link>
         </div>
-        <div className={`navItems ${menuOpen ? "open" : ""}`}>
+        <div className={`nav-items ${menuOpen ? "open" : ""}`}>
             <NavItem name="Home" closeMenu={closeMenu}/>
             <NavItem name="About us" route="about" closeMenu={closeMenu}/>
             <NavItem name="Shop" closeMenu={closeMenu}/>
