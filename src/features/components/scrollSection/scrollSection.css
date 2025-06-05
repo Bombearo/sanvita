@@ -25,3 +25,7 @@ swiper-container::part(bullet-active){
     height:100%;
     mix-blend-mode:multiply;
 }
+
+.scroll-section-content{
+    overflow: hidden;
+}
