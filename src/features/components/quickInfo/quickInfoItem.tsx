@@ -8,7 +8,8 @@ function QuickInfoItem({ bodyText, boldText }: QuickInfoItemProps) {
 
     return ( 
     <div className="quick-info-item">
-        <div className="quick-info-item-bold">{boldText}</div>
+        <div className="quick-info-item-bold">
+            <p>{boldText}</p></div>
         <div className="quick-info-item-body">
             <p>
                 {bodyText}
