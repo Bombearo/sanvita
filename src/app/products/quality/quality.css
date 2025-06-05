@@ -1,11 +1,12 @@
 .quality-container{
     display:flex;
+    flex-direction: column;
     justify-content: space-evenly;
     padding:1rem;
 }
 
 .video-container{
-    width:40%;
+    width:100%;
     display: flex;
     flex-direction: column;
     justify-content:  flex-end;
@@ -14,7 +15,6 @@
 .video-text{
     color:#c00000;
     text-align: center;
-    font-size:2rem;
     font-weight: 600;
     font-style: italic;
 }
@@ -27,6 +27,96 @@
     align-items: center;
 }
 
-.safety-quality h2{
-    font-size:3rem;
+.quality-image-wrapper{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.quality-image-item, .quality-image-text{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+    margin: 1rem 0;
+}
+
+.quality-image-item img{
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+    mix-blend-mode: multiply;
+    z-index: 2;
+}
+
+@keyframes fade-left {
+    from {
+        opacity: 0;
+        transform: translateX(-1rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fade-right{
+    from {
+        opacity: 0;
+        transform: translateX(1rem);
+        mix-blend-mode: multiply;
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+
+.quality-first p{
+    animation: fade-left 1s;
+    transition: transform 0.3s ease;
+}
+
+
+.quality-second p{
+    animation: fade-right 1s;
+    transition: transform 0.3s ease;
+}
+
+
+
+@media screen and (min-width:1000px) {
+    .quality-container{
+        flex-direction: row;
+    }
+    .video-container{
+        width: 40%;
+    }
+    .quality-image-wrapper{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .quality-image-wrapper{
+    width: 100%;
+    flex-direction: row;
+
+}
+
+    .quality-image-item, .quality-image-text{
+        width: 30%;
+        display: flex;
+        align-items: center;
+        padding: 1rem;
+        margin: 1rem;
+    }
+    .reverse{
+    flex-direction: row-reverse;
+}
 }

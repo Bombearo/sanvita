@@ -1,6 +1,7 @@
 
-import ProductOptions from './productOptions';
+
 import "./quality.css"
+import Image from "next/image";
 
 const items = [
     {
@@ -10,6 +11,19 @@ const items = [
     {
         src:"/videos/quality2.mp4",
         text:"Automatic intelligent inspection and packaging line"
+    }
+]
+
+const images = [
+    {
+        src: "/images/quality/image2.png",
+        alt: "Quality Image 1",
+        text: "Made by Japanese medical-grade stainless steel wire​"
+    },
+    {
+        src: "/images/quality/image3.png",
+        alt: "Quality Image 2",
+        text: "Needle tip under 2000X SEM"
     }
 ]
 
@@ -38,7 +52,19 @@ function QualityPage() {
             </div>
             
         </div>
-        <ProductOptions />
+            <div className="quality-image">
+                {images.map((image, index) => (
+                    <div key={index} className={`quality-image-wrapper` + (index % 2 === 0 ? "" : " reverse")}>
+                        <div className={"quality-image-item "+ (index % 2 === 0 ? "quality-first" : "quality-second")}>
+                            <Image src={image.src} alt={image.alt} width={1000} height={200} />
+                        </div>
+                        <div className={"quality-image-text " + (index % 2 === 0 ? "quality-second" : "quality-first")}>
+                            <p >{image.text}</p>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        
     </div>;
 }
 
