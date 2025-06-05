@@ -55,10 +55,10 @@ function QualityPage() {
             <div className="quality-image">
                 {images.map((image, index) => (
                     <div key={index} className={`quality-image-wrapper` + (index % 2 === 0 ? "" : " reverse")}>
-                        <div className={"quality-image-item "+ (index % 2 === 0 ? "left" : "right")}>
+                        <div className={"quality-image-item "+ (index % 2 === 0 ? "quality-first" : "quality-second")}>
                             <Image src={image.src} alt={image.alt} width={1000} height={200} />
                         </div>
-                        <div className={"quality-image-text" + (index % 2 === 0 ? " left" : " right")}>
+                        <div className={"quality-image-text " + (index % 2 === 0 ? "quality-second" : "quality-first")}>
                             <p >{image.text}</p>
                         </div>
                     </div>

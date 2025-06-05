@@ -49,6 +49,43 @@
     height: auto;
     border-radius: 1rem;
     mix-blend-mode: multiply;
+    z-index: 2;
+}
+
+@keyframes fade-left {
+    from {
+        opacity: 0;
+        transform: translateX(-1rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fade-right{
+    from {
+        opacity: 0;
+        transform: translateX(1rem);
+        mix-blend-mode: multiply;
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+
+.quality-first p{
+    animation: fade-left 1s;
+    transition: transform 0.3s ease;
+}
+
+
+.quality-second p{
+    animation: fade-right 1s;
+    transition: transform 0.3s ease;
 }
 
 
@@ -78,13 +115,6 @@
         align-items: center;
         padding: 1rem;
         margin: 1rem;
-    }
-
-    .quality-image-item img{
-        width: 100%;
-        height: auto;
-        border-radius: 1rem;
-        mix-blend-mode: multiply;
     }
     .reverse{
     flex-direction: row-reverse;
