@@ -68,3 +68,17 @@
     transition: transform 0.3s ease;
 }
 
+@media screen and (min-width: 1000px) {
+    .highlight-items{
+        width: 80%;
+        justify-content: space-between;
+    }
+    .highlight-item{
+        width: 30%;
+    }
+    .highlight-item-images-content img{
+        width: 100%;
+        height: auto;
+    }
+    
+}
