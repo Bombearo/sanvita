@@ -7,13 +7,15 @@ import "./navItem.css";
 interface NavItemProps {
     name: string,
     dropdown?: string[],
-    route?:string
+    route?:string,
+    closeMenu?: () => void, // Optional function to close the menu
 }
 
-const createDropdown = (dropdown: string[], parentRoute: string) => (
+const createDropdown = (dropdown: string[], parentRoute: string, closeMenu?: () => void, isMobile?: boolean) => (
     <div className="dropdown-menu">
         {dropdown.map((item, index) => (
-            <Link key={index} href={`/${parentRoute}/${item.toLowerCase()}`} className="dropdown-item">
+            <Link key={index} href={`/${parentRoute}/${item.toLowerCase()}`} className="dropdown-item"
+            onClick={isMobile && closeMenu ? closeMenu : undefined}>
                 {item}
             </Link>
         ))}
@@ -33,7 +35,7 @@ function useIsMobile(breakpoint = 1000){
 }
 
 
-function NavItem({ name, dropdown, route }: NavItemProps) {
+function NavItem({ name, dropdown, route, closeMenu }: NavItemProps) {
     const [open, setOpen] = useState(false);
     const isMobile = useIsMobile();
 
@@ -53,16 +55,21 @@ function NavItem({ name, dropdown, route }: NavItemProps) {
                 onClick={isMobile && dropdown ? handleToggle : undefined}
             >
                 <div className="nav-link-container">
-                    <Link href={navRoute === "home" ? "/" : `/${navRoute}`}>
+                    <Link href={navRoute === "home" ? "/" : `/${navRoute}`}
+                    onClick={isMobile && closeMenu ? closeMenu : undefined}>
                         {name}
                     </Link>
                     {dropdown && dropdown.length > 0 && (
-                        <span className="dropdown-icon">
+                        <span className="dropdown-icon"
+                            onClick={isMobile ? (e) => {e.stopPropagation(); handleToggle()}
+                            : undefined}
+                            style={{ cursor: isMobile ? "pointer" : "default" }}>
+                            
                             {(open ? "▲" : "▼") }
                         </span>
                     )}
                 </div>
-            {open && dropdown && dropdown.length > 0 && createDropdown(dropdown, navRoute)}
+            {open && dropdown && dropdown.length > 0 && createDropdown(dropdown, navRoute, closeMenu, isMobile)}
         </div>
     );
     
