@@ -13,6 +13,18 @@ const titleText =[
   "Hwato needles offer more than just reliable tools - they deliver a complete solution for enhanced therapeutic outcomes and patient comfort."
 ];
 
+const items = [
+    {
+        src:"/videos/quality1.mp4",
+        text:"High-speed image detection, automatic removing unqualified needles​"
+    },
+    {
+        src:"/videos/quality2.mp4",
+        text:"Automatic intelligent inspection and packaging line"
+    }
+]
+
+
 export default function Home() {
   //const videoSrc = "/videos/sanvita.mp4";
 
@@ -101,6 +113,17 @@ export default function Home() {
       </div>
   */
 
+const component = items.map((item,index) =>(
+<div key={index} className="video-container">
+    <span className="video-text">{item.text}</span>
+    <video className="quality-video" controls muted autoPlay loop>
+        <source src={item.src}/>
+    </video>
+</div>
+
+))
+
+
   return (
     <main>
       <div className="title-container">
@@ -114,6 +137,10 @@ export default function Home() {
         </div>
       </div>
     <QuickInfo title="162 Years of Excellence" description="as the Quintessential Leader in Traditional Chinese Medicine Devices" information={quickInfo} logoUrls={["/images/hwato.jpeg","/images/CTB.png"]} />
+    <div>
+      {component}
+    </div>
+    
     <div className="home-contact-container">
       <h2 className="contact-title">Contact Us</h2>
       <p className="contact-text">For the full Hwato catalogue, or for any enquiries and orders, please contact:<br/>
