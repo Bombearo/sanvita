@@ -1,4 +1,5 @@
 
+import Link from "next/link";
 import "./home.css"
 import QuickInfo from "@/features/components/quickInfo/quickInfo";
 
@@ -137,8 +138,19 @@ const component = items.map((item,index) =>(
         </div>
       </div>
     <QuickInfo title="162 Years of Excellence" description="as the Quintessential Leader in Traditional Chinese Medicine Devices" information={quickInfo} logoUrls={["/images/hwato.jpeg","/images/CTB.png"]} />
-    <div>
-      {component}
+    <div className="quality-video-container">
+      <div className="quality-video-header">
+        <h2>Our Quality Commitment</h2>
+        <p>Hwato needles are manufactured with the highest standards of quality and safety, ensuring that you receive the best products for your practice.</p>
+      </div>
+      <div className="videos">
+        {component}
+      </div>      
+      <div className="quality-video-link-container">
+        <Link href="/products/quality" className="quality-video-link">
+          <button>Learn more about our quality</button>
+        </Link>
+      </div>
     </div>
     
     <div className="home-contact-container">
