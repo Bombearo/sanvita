@@ -20,6 +20,7 @@ function NavBar() {
             <NavItem name="About us" route="about" closeMenu={closeMenu}/>
             <NavItem name="Shop" closeMenu={closeMenu}/>
             <NavItem name="Products" dropdown={["options","quality"]} route="products" closeMenu={closeMenu}/>
+            <NavItem name="Learn" route="learn" closeMenu={closeMenu}/>
             <NavItem name="Contact us" route="contact" closeMenu={closeMenu}/>
         </div>
         <div className="buttons">
