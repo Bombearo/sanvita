@@ -1,10 +1,17 @@
 
 import "./home.css"
 import QuickInfo from "@/features/components/quickInfo/quickInfo";
-import BrandMission from "@/features/components/brandMission/brandMission";
 
 const currentYear = new Date().getFullYear();
 
+const titleText =[
+  "Hwato acupuncture needles deliver painless insertion, support confident manipulation, providing a complete solution for both traditional acupuncture practicioners and patients seeking comfort and consistent clinical results."
+  ,
+  "Hwato is a manufacturer you can trust - with safety and hygeine guaranteed.",
+  
+   " Certified by <strong>CE</strong>, and <strong>FDA</strong>, and fully compliant with the international standard <strong>ISON 17218:2014-Sterile Acupuncture Needles for Single Use</strong>.",
+  "Hwato needles offer more than just reliable tools - they deliver a complete solution for enhanced therapeutic outcomes and patient comfort."
+];
 
 export default function Home() {
   //const videoSrc = "/videos/sanvita.mp4";
@@ -96,7 +103,16 @@ export default function Home() {
 
   return (
     <main>
-    <BrandMission />
+      <div className="title-container">
+        <div className="title-header">
+          <h1>We provide acupuncture solutions for both practitioners and patients</h1>
+        </div>
+        <div className="title-text-container">
+          {titleText.map((text, index) => (
+            <p key={index} className="title-text" dangerouslySetInnerHTML={{ __html: text }}/>
+          ))}
+        </div>
+      </div>
     <QuickInfo title="162 Years of Excellence" description="as the Quintessential Leader in Traditional Chinese Medicine Devices" information={quickInfo} logoUrls={["/images/hwato.jpeg","/images/CTB.png"]} />
 
     

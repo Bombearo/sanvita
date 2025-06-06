@@ -1,7 +1,7 @@
 "use client";
 import { useState } from 'react';
 import HighlightBanner from '@/features/components/highlightBanner/highlightBanner';
-import ScrollSection from '@/features/components/scrollSection/scrollSection';
+import Image from 'next/image';
 import './productOptions.css';
 
 const highlightItems = [
@@ -173,6 +173,24 @@ const tableItems = [
     }
 ]
 
+const packagingItems = [
+    {
+        image: "/images/packaging/image12.png",
+        title: "With guide tube",
+        text: ""
+    },
+    {
+        image: "/images/packaging/image13.png",
+        title: "Eco- Without Guide Tube",
+        text: ""
+    },
+    {
+        image: "/images/packaging/image14.png",
+        title: "Eco - Bulk 10",
+        text: "10 Needles with 1 guide tube"
+    }
+];
+
 function ProductOptions() {
     const [currentState, setCurrentState] = useState<string>('table');
 
@@ -182,7 +200,7 @@ function ProductOptions() {
     const renderContent = () => {
         switch (currentState) {
             case 'table':
-                return <div style={{ display: 'flex', alignItems: 'center' }}>
+                return <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
 
                     <table style={ {borderCollapse: 'collapse', marginTop: '20px'}}>
                         <thead>
@@ -224,23 +242,57 @@ function ProductOptions() {
                 title="Our Handles"
                 items={highlightItems}
                 />
-                <ScrollSection
-                items={productOptions}
-                ></ScrollSection>
+                <div className="flex flex-col items-center justify-center">
+                    <h3>Types of Needles</h3>
+                    <div className="product-options-container">
+                    {productOptions.map((option, index) => (
+                        <div key={index} className={"product-option" + (index % 2 === 0 ? " reverse" : "")}>
+                            <div className={'product-option-image-wrapper' + (index % 2 === 0 ? "" : " first")}>
+                            <Image src={option.image} alt={option.title} className="product-option-image" width={300} height={300} />
+                            </div>
+                            <div className={'product-option-text ' + (index % 2 === 0 ? " second" : " first")}>
+                            <h3>{option.title}</h3>
+                            <ul>
+                                {option.text.map((text, textIndex) => (
+                                    <li key={textIndex}>{text}</li>
+                                ))}
+                            </ul>
+                            </div>
+                        </div>
+                    ))}
+                    </div>
+                    
+                </div>
                 </div>;
-            case 'grid':
-                return <div>Grid content goes here.</div>;
+            case 'packaging':
+                return <div><h3>Packaging Options</h3>
+                <div className="packaging-options-container">
+                    {packagingItems.map((item, index) => (
+                        <div key={index} className={"packaging-option" + (index % 2 === 0 ? " reverse" : "")}>
+                            <div className={'packaging-option-image-wrapper' + (index % 2 === 0 ? "" : " first")}>
+                                <Image src={item.image} alt={item.title} className="packaging-option-image" width={300} height={300} />
+                            </div>
+                            <div className={'packaging-option-text ' + (index % 2 === 0 ? " second" : " first")}>
+                                <h3>{item.title}</h3>
+                                {item.text && <p>{item.text}</p>}
+                            </div>
+                        </div>
+                    ))}
+                    </div>
+                </div>;
             default:
                 return <div>Default content goes here.</div>;
         }
     };
     return (
         <div>
-            <h2>Product Options</h2>
-            <p>Here you can find various options for our products.</p>
-            <div>
-                <button onClick={() => handleStateChange('table')}>Table View</button>
-                <button onClick={() => handleStateChange('handles')}>Handles + Packaging</button>
+            <div className="flex">
+                <button className = {"product-options-button" + (currentState === 'table' ? ' btn-active' : '')}
+                onClick={() => handleStateChange('table')}>Table View</button>
+                <button className = {"product-options-button" + (currentState === 'handles' ? ' btn-active' : '')}
+                onClick={() => handleStateChange('handles')}>Handles + Needles</button>
+                <button className = {"product-options-button" + (currentState === 'packaging' ? ' btn-active' : '')}
+                onClick={() => handleStateChange('packaging')}>Packaging</button>
             </div>
             <div>
                 {renderContent()}

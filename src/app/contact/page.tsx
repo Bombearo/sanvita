@@ -1,5 +1,7 @@
 "use client";
 import "./contact.css";
+import {sendMail} from "@/lib/send-mail";
+
 
 function Contact() {
     return (
@@ -49,9 +51,41 @@ function Contact() {
                         <textarea id="message" name="message" placeholder="Enter your message" required></textarea>
                     </div>
                     <div className="button-container">
-                        <button type="submit">Send Message</button>
+                        <button
+                            type="submit"
+                            className="submit-button"
+                            onClick={async (e) => {
+                                e.preventDefault();
+                                const nameInput = document.getElementById("name") as HTMLInputElement | null;
+                                const emailInput = document.getElementById("email") as HTMLInputElement | null;
+                                const orderRefInput = document.getElementById("order-ref") as HTMLInputElement | null;
+                                const inquiryTypeSelect = document.getElementById("inquiry-type") as HTMLSelectElement | null;
+                                const subjectInput = document.getElementById("subject") as HTMLInputElement | null;
+                                const messageInput = document.getElementById("message") as HTMLTextAreaElement | null;
+
+                                const name = nameInput?.value || "";
+                                const email = emailInput?.value || "";
+                                const orderRef = orderRefInput?.value || "";
+                                const inquiryType = inquiryTypeSelect?.value || "";
+                                const subjectValue = subjectInput?.value || "";
+                                const message = messageInput?.value || "";
+
+                                const subject = `<${inquiryType}> - ${subjectValue}`;
+                                const text = `Name: ${name}\nEmail: ${email}\nOrder Reference: ${orderRef}\nInquiry Type: ${inquiryType}\nMessage: ${message}`;
+                                const html = `<p>Name: ${name}</p><p>Email: ${email}</p><p>Order Reference: ${orderRef}</p><p>Inquiry Type: ${inquiryType}</p><p>Message: ${message}</p>`;
+
+                                await sendMail({
+                                    email,
+                                    sendTo: email,
+                                    subject,
+                                    text,
+                                    html,
+                                });
+                            }} disabled
+                        >Send Message</button>
                     </div>
-                    
+                    <p>Currently our contact form is under maintenance. If you have any enquiries, please email us directly at: <span className="footer-link"><a href="mailto:info@sanvitahealth.co.uk">info@sanvitahealth.co.uk</a></span></p>
+
                 </form>
             </div>
             </div>

@@ -1,26 +1,122 @@
 table, tr{
-    width:70%;
-    border: 1px solid #ddd;
+    width: 100%;
+}
+td{
+    padding: 0.2rem;
 }
 
 .length{
     background-color: #f0f0f0;
 }
 
-td{
-    padding: 0.5rem;
-    text-align: center;
+.product-options-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
 }
 
-@media screen and (max-width: 1000px) {
-    table, tr{
-        width: 100%;
+.product-option{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.product-options-button{
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: var(--blue-section);
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-active{
+    background-color: var(--dark-green-section);
+    opacity: 0.8;
+}
+
+.packaging-option{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.packaging-options-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    position:relative;
+    min-height:500px;
+}
+
+.packaging-options-image-wrapper{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.packaging-option-image{
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+    mix-blend-mode: multiply;
+}
+
+@media screen and (min-width: 600px) {
+    .product-options-container{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
     }
+    .product-option{
+        width: 30%;
+    }
+    
+}
+
+@media screen and (min-width: 1000px) {
+
+
+    table, tr{
+    width:70%;
+    border: 1px solid #ddd;
+}
     td{
-        padding: 0.2rem;
+        padding: 0.5rem;
+        text-align: center;
     }
     .length{
         font-size: 0.8rem;
     }
-    
+    .product-option{
+        flex-direction: row;
+    }
+    .packaging-option{
+        width: 30%;
+        height:100%;
+        flex-direction: row;
+        flex-grow: 1;
+    }
+
+    .packaging-options-container{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+   
 }

@@ -55,6 +55,24 @@ width:100%;
     width:100%;
     margin:0;
 }
+.footer-misc{
+    width:20%
+}
+
+.footer-misc p{
+    font-size: 1rem;
+    color: var(--foreground);
+    margin: 0.5em 0;
+}
+
+.footer-link{
+    color: var(--blue-section);
+    margin: 0.5em 0;
+}
+
+.footer-link:hover{
+    color: var(--green-text);
+}
 
 @media screen and (max-width: 1000px) {
     
@@ -71,5 +89,7 @@ width:100%;
     .footer-decoration img {
         width: 100%;
     }
+
+
     
 }

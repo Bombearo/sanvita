@@ -1,5 +1,6 @@
 .section-container{
     display: flex;
+    flex-direction: column;
     align-items: stretch;
     justify-content: stretch;
     padding: 2em 0;
@@ -76,5 +77,26 @@
 .section-paragraph{
     margin: 0.5em 0;
     width: 100%;
+}
+
+@media screen and (min-width: 1000px) {
+    .section-container{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .section{
+        width: 45%;
+    }
+
+    .section-media{
+        width: 45%;
+    }
+
+    .section-content{
+        width: 50%;
+        margin-left: 2em;
+    }
+    
 }
 

@@ -7,10 +7,6 @@
     box-shadow: 0 2px 0px var(--dark-green-section);
 }
 
-.dropdown-menu{
-    position:absolute;
-    top:50px
-}
 
 .dropdown-item{
     width:100%;
@@ -21,11 +17,14 @@
 .nav-item {
     padding: 0.5rem 1rem;
     width: 100%;
+    
 }
+
 
 .dropdown-menu {
     position: relative;
     top: 0;
+    background-color: var(--green-section);
 }
 
 @media screen and (min-width: 1000px) {
@@ -45,7 +44,6 @@
     .dropdown-menu{
         position: fixed;
         top: 3rem;
-        background-color: var(--green-section);
         padding: 0.5rem 1rem;
         border-radius: 1rem;
     }

@@ -14,10 +14,13 @@
 
 .brand-showcase{
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    justify-content: space-evenly;
-    padding: 2rem;
+    gap: 1rem;
+    padding: 2rem 0;
     background-color: var(--blue-section);
+    flex-wrap: wrap;
 }
 
 .brand-image{
@@ -25,6 +28,7 @@
     width: 20%;
     background-color: var(--blue-2);
     padding:1rem;
+    width:70%
 }
 
 .brand-item{
@@ -63,5 +67,33 @@
     display: flex;
     gap: 1rem;
     padding: 1rem;
+    
+}
+
+@media screen and (min-width:600px) {
+    .brand-image{
+        width: 30%;
+    }
+
+    .brand-item{
+        width: 80%;
+    }
+    
+}
+
+@media screen and (min-width:1000px) {
+    .brand-section-items{
+        width: 80%;
+        margin: auto;
+    }
+
+    .brand-image{
+        max-width: 500px;
+    }
+
+    .brand-showcase{
+        flex-direction: row;
+        justify-content: space-between;
+    }
     
 }

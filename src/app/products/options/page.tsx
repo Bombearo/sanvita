@@ -2,10 +2,10 @@ import ProductOptions from "./productOptions";
 
 function OptionsPage() {
     return <div>
-        <h1 className="text-4xl font-bold mb-4">Product Options</h1>
-        <p className="text-lg text-gray-700 mb-6">
-            Explore the various options available for our products, including needle diameters, gauges, and lengths.
-        </p>
+        <div className="flex flex-col justify-center items-center mb-4 ">
+            <h1>Product Options</h1>
+            <p> With 203 sizes, 5 handle types, and 4 packing options - there is always one that fits your needs</p>
+        </div>
         <ProductOptions />
     </div>;
 }

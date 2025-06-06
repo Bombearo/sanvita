@@ -2,7 +2,6 @@ import "./about.css";
 import Section from "@/features/components/section/section";
 import GridSection from "@/features/components/gridSection/gridSection";
 import CardBanner from "@/features/components/cardBanner/cardBanner";
-import { GridSectionItemProps } from "@/features/components/gridSection/gridSectionItem";
 
 /*interface ButtonProps{
     text:string;
@@ -67,29 +66,11 @@ const manufacturing = [
     },
     {
       title: "WFAS",
-      image: "/images/partner4.png",
+      image: "",
       link: "/partners/partner4",
     }
   ]
 
-  const globalReach: GridSectionItemProps[] = [
-    {
-      title: "Markets",
-      description: "Our markets include North America, Europe, Australia, Southeast Asia, Middle East, South America"
-    },
-    {
-      title: "Certifications",
-      description: "We have certifications in CE, FDA, TGA, ISO 13485"
-    },
-    {
-      title: "Global Reach",
-      description: "We serve up to 183+ different countries around the world"
-    },
-    {
-      title: "Other Perks",
-      description: "Customized packaging and multilingual support"
-    }
-  ]
 export default function About() {
     return (
         <div className="">
@@ -111,10 +92,10 @@ export default function About() {
                     title="HwaTo"
                     gridItems={gridItems}
                     button={{ text: "View Products", buttonLink: "/products" }}
-                    mediaItems={["/images/hwato.jpeg","/images/HQ.png"]}
+                    mediaItems={["/images/hwato.jpeg"]}
                 />
 
-                <GridSection title="Global Reach and Certifications" gridItems={globalReach} mediaItems={["/images/HQ.png"]} />
+                
     <CardBanner title="Our Partners" cardItems={partners} />
 
     <GridSection title="Manufacturing" gridItems={manufacturing} mediaItems={["/images/factory.png"]} reverse={true} subtitle="The world's largest production scale of needles"/>

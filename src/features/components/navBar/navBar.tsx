@@ -12,10 +12,10 @@ function NavBar() {
     return ( <nav className="navbar">
         <div className="logo">
             <Link href="/">
-            <Image src="/logo.svg" alt="Logo" width={50} height={50}/>
+            <Image src="/images/hwato.jpeg" alt="Logo" width={50} height={50} style={{mixBlendMode: "multiply"}}/>
             </Link>
         </div>
-        <div className={`navItems ${menuOpen ? "open" : ""}`}>
+        <div className={`nav-items ${menuOpen ? "open" : ""}`}>
             <NavItem name="Home" closeMenu={closeMenu}/>
             <NavItem name="About us" route="about" closeMenu={closeMenu}/>
             <NavItem name="Shop" closeMenu={closeMenu}/>
