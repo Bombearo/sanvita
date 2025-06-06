@@ -4,6 +4,8 @@
   --background: #FFFCF7;
   --foreground: #738290;
 
+  --background-2:#f0f0f0
+
   --green-section: #E4F0D0;
   --blue-section: #A1B5D8;
   --dark-green-section:#C2D8B9;
@@ -24,11 +26,26 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
+img{
+  mix-blend-mode: multiply;
+}
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+  --background-2:#1a1a1a;
+
+
+  --green-section: #02735E;
+  --blue-section: #616c69;
+  --dark-green-section:#384035;
+
+  --green-text:#E4F0D0;
+  --blue-2:#A1B5D8;
+  }
+  img{
+    mix-blend-mode: normal;
   }
 }
 
@@ -65,6 +82,8 @@ h3{
     font-weight: 400;
 
 }
+
+
 
 @media screen and (min-width:900px) {
     h1{
