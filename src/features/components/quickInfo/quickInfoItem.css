@@ -9,12 +9,12 @@
 
 }
 
-.quick-info-item-bold{
+.quick-info-item-bold, .quick-info-title-bold{
     font-weight: bold;
     color:#C2010D;
 }
 
-.quick-info-item-bold p{
+.quick-info-item-bold p, .quick-info-title-bold p{
     font-size:1.2rem;
 }
 
@@ -28,7 +28,7 @@
     text-align: center;
 }
 
-.quick-info-item-bold:hover{
+.quick-info-item-bold:hover, .quick-info-title-bold:hover{
     color: red;
     transform:scale(1.1);
     text-decoration: underline;
