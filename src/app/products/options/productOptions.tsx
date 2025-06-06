@@ -173,6 +173,24 @@ const tableItems = [
     }
 ]
 
+const packagingItems = [
+    {
+        image: "/images/packaging/image12.png",
+        title: "With guide tube",
+        text: ""
+    },
+    {
+        image: "/images/packaging/image13.png",
+        title: "Eco- Without Guide Tube",
+        text: ""
+    },
+    {
+        image: "/images/packaging/image14.png",
+        title: "Eco - Bulk 10",
+        text: "10 Needles with 1 guide tube"
+    }
+];
+
 function ProductOptions() {
     const [currentState, setCurrentState] = useState<string>('table');
 
@@ -246,8 +264,22 @@ function ProductOptions() {
                     
                 </div>
                 </div>;
-            case 'grid':
-                return <div>Grid content goes here.</div>;
+            case 'packaging':
+                return <div><h3>Packaging Options</h3>
+                <div className="packaging-options-container">
+                    {packagingItems.map((item, index) => (
+                        <div key={index} className={"packaging-option" + (index % 2 === 0 ? " reverse" : "")}>
+                            <div className={'packaging-option-image-wrapper' + (index % 2 === 0 ? "" : " first")}>
+                                <Image src={item.image} alt={item.title} className="packaging-option-image" width={300} height={300} />
+                            </div>
+                            <div className={'packaging-option-text ' + (index % 2 === 0 ? " second" : " first")}>
+                                <h3>{item.title}</h3>
+                                {item.text && <p>{item.text}</p>}
+                            </div>
+                        </div>
+                    ))}
+                    </div>
+                </div>;
             default:
                 return <div>Default content goes here.</div>;
         }
@@ -258,9 +290,9 @@ function ProductOptions() {
                 <button className = {"product-options-button" + (currentState === 'table' ? ' btn-active' : '')}
                 onClick={() => handleStateChange('table')}>Table View</button>
                 <button className = {"product-options-button" + (currentState === 'handles' ? ' btn-active' : '')}
-                onClick={() => handleStateChange('handles')}>Handles + Packaging</button>
-                <button className = {"product-options-button" + (currentState === 'grid' ? ' btn-active' : '')}
-                onClick={() => handleStateChange('grid')}>Grid View</button>
+                onClick={() => handleStateChange('handles')}>Handles + Needles</button>
+                <button className = {"product-options-button" + (currentState === 'packaging' ? ' btn-active' : '')}
+                onClick={() => handleStateChange('packaging')}>Packaging</button>
             </div>
             <div>
                 {renderContent()}
