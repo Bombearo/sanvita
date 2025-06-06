@@ -6,7 +6,7 @@ td{
 }
 
 .length{
-    background-color: #f0f0f0;
+    background-color: var(--background-2);
 }
 
 .product-options-container{
@@ -72,7 +72,6 @@ td{
     width: 100%;
     height: auto;
     border-radius: 1rem;
-    mix-blend-mode: multiply;
 }
 
 @media screen and (min-width: 600px) {

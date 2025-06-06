@@ -5,7 +5,7 @@ import Image from "next/image";
 function Footer() {
     return (<footer className="footer">
         <div className="footer-decoration" >
-            <Image src="/footer.svg" alt="Decoration" height={100} width={100}/>
+            <Image className="footer-decoration-img" src="/footer.svg" alt="Decoration" height={100} width={100}/>
         </div>
         <div className="footer-content">
             
