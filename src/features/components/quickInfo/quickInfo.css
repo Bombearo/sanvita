@@ -49,7 +49,7 @@
     grid-template-columns: 1fr 1fr 1fr;
     margin:auto;
     width:80%;
-    gap: 2rem;
+    gap: .5rem;
     padding: 2rem;
 }
 
