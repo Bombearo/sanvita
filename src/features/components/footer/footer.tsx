@@ -11,15 +11,15 @@ function Footer() {
             
             <div className="footer-shop">
                 <h3>Shop</h3>
-                <Link href="/about">Accupuncture Needles</Link>
-                <Link href="/contact">Electroacupuncture</Link>
-                <Link href="/products">Cosmo MOQ</Link>
-                <Link href="/learn">Shop All</Link>
+                <Link href="/shop">Accupuncture Needles</Link>
+                <Link href="/shop">Electroacupuncture</Link>
+                <Link href="/shop">Cosmo MOQ</Link>
+                <Link href="/shop">Shop All</Link>
             </div>
             <div className="footer-learn">
                 <h3>Learn</h3>
-                <Link href="/learn">Our Products</Link>
-                <Link href="/learn">Our Brands</Link>
+                <Link href="/products">Our Products</Link>
+                <Link href="/products">Our Brands</Link>
                 <Link href="/learn">Acupuncture Needles</Link>
             </div>
             <div className="footer-info">
@@ -38,7 +38,7 @@ function Footer() {
                     <span className="footer-link"><a href="mailto:info@sanvitahealth.co.uk">info@sanvitahealth.co.uk</a></span>
                 </p>
                 <p>Phone: +44 (0) 1234 567890</p>
-                <p>Address: 123 Sanvita Street, London, UK</p>
+                <p>Address: 12 Prince St, London W1G 8JN</p>
                 <p>Website built by  
                     <span className="footer-link"> <a href="https://www.jadenshek.com">Jaden Shek</a></span>
                 </p>
