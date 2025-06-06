@@ -17,7 +17,14 @@
     .grid-section-text {
         grid-template-columns: 1fr;
     }
+.grid-section-button{
+    background-color: var(--dark-green-section);
+    border-radius: 2em;
+    text-align: center;
+    padding:1rem;
+    margin: 1rem 0;
 
+}
 
 @media screen and (min-width: 1000px) {
 

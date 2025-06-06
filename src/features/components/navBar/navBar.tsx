@@ -12,7 +12,7 @@ function NavBar() {
     return ( <nav className="navbar">
         <div className="logo">
             <Link href="/">
-            <Image src="/logo.svg" alt="Logo" width={50} height={50}/>
+            <Image src="/images/hwato.jpeg" alt="Logo" width={50} height={50} style={{mixBlendMode: "multiply"}}/>
             </Link>
         </div>
         <div className={`nav-items ${menuOpen ? "open" : ""}`}>
