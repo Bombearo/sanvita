@@ -81,10 +81,11 @@ function Contact() {
                                     text,
                                     html,
                                 });
-                            }}
+                            }} disabled
                         >Send Message</button>
                     </div>
-                    
+                    <p>Currently our contact form is under maintenance. If you have any enquiries, please email us directly at: <span className="footer-link"><a href="mailto:info@sanvitahealth.co.uk">info@sanvitahealth.co.uk</a></span></p>
+
                 </form>
             </div>
             </div>
