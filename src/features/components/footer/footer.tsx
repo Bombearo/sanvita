@@ -37,8 +37,6 @@ function Footer() {
                 <p>📩 For the full Hwato catalogue or any enquiries, please email us at: 
                     <span className="footer-link"><a href="mailto:info@sanvitahealth.co.uk">info@sanvitahealth.co.uk</a></span>
                 </p>
-                <p>Phone: +44 (0) 1234 567890</p>
-                <p>Address: 12 Prince St, London W1G 8JN</p>
                 <p>Website built by  
                     <span className="footer-link"> <a href="https://www.jadenshek.com">Jaden Shek</a></span>
                 </p>
