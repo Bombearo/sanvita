@@ -9,7 +9,7 @@ const titleText =[
   ,
   "Hwato is a manufacturer you can trust - with safety and hygeine guaranteed.",
   
-   " Certified by <strong>CE</strong>, and <strong>FDA</strong>, and fully compliant with the international standard <strong>ISON 17218:2014-Sterile Acupuncture Needles for Single Use</strong>.",
+   "Certified by <strong>CE</strong>, and <strong>FDA</strong>, and fully compliant with the international standard <strong>ISO 17218:2014-Sterile Acupuncture Needles for Single Use</strong>.",
   "Hwato needles offer more than just reliable tools - they deliver a complete solution for enhanced therapeutic outcomes and patient comfort."
 ];
 
