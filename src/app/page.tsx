@@ -114,7 +114,12 @@ export default function Home() {
         </div>
       </div>
     <QuickInfo title="162 Years of Excellence" description="as the Quintessential Leader in Traditional Chinese Medicine Devices" information={quickInfo} logoUrls={["/images/hwato.jpeg","/images/CTB.png"]} />
-
+    <div className="home-contact-container">
+      <h2 className="contact-title">Contact Us</h2>
+      <p className="contact-text">For the full Hwato catalogue, or for any enquiries and orders, please contact:<br/>
+        📧 <a href="mailto:info@sanvitahealth.co.uk">info@sanvitahealth.co.uk</a>
+      </p>
+    </div>
     
     </main>
     
