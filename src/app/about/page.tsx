@@ -2,7 +2,6 @@ import "./about.css";
 import Section from "@/features/components/section/section";
 import GridSection from "@/features/components/gridSection/gridSection";
 import CardBanner from "@/features/components/cardBanner/cardBanner";
-import { GridSectionItemProps } from "@/features/components/gridSection/gridSectionItem";
 
 /*interface ButtonProps{
     text:string;
