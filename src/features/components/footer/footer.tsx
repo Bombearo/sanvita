@@ -32,12 +32,16 @@ function Footer() {
 
             <div className="footer-misc">
                 <h3>Sanvita</h3>
-                <p>Official UK importer and distributor of Hwato.</p>
+                <p>We are the MHRA-registered importer of medical devices in the UK, and the official distributor of Suzhou Medical Appliance Factory — the world’s oldest and largest manufacturer of acupuncture needles.</p>
                 <p>Website: <a href="https://www.sanvitahealth.com">www.sanvitahealth.co.uk</a></p>
-                <p>Email: info@sanvitahealth.co.uk</p>
+                <p>📩 For the full Hwato catalogue or any enquiries, please email us at: 
+                    <span className="footer-link"><a href="mailto:info@sanvitahealth.co.uk">info@sanvitahealth.co.uk</a></span>
+                </p>
                 <p>Phone: +44 (0) 1234 567890</p>
                 <p>Address: 123 Sanvita Street, London, UK</p>
-                <p>Website built by <a href="https://www.jadenshek.com">Jaden Shek</a></p>
+                <p>Website built by  
+                    <span className="footer-link"> <a href="https://www.jadenshek.com">Jaden Shek</a></span>
+                </p>
             </div>
         </div>
         
