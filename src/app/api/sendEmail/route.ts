@@ -1,16 +1,12 @@
-"use client";
-import "./contact.css";
+"use server";
+import { sendMail } from "@/lib/send-mail";
 
-const HIDDEN_VALUE = process.env.HIDDEN_VALUE;
-
-
-function Contact() {
-    const constructEmailReceipt = (name: string, email: string, orderRef: string, inquiryType: string, subject: string, message: string) => {
+const constructEmailReceipt = (name: string, email: string, orderRef: string, inquiryType: string, message: string, isRecipient:boolean=true) => {
 
         return `<table class="heading_block block-5" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
                                 <tr>
                                     <td class="pad">
-                                        <h2 style="margin: 0; color: #02735e; direction: ltr; font-family: 'Bitter', Georgia, Times, 'Times New Roman', serif; font-size: 30px; font-weight: 400; letter-spacing: normal; line-height: 1.2; text-align: left; margin-top: 0; margin-bottom: 0; mso-line-height-alt: 36px;"><span class="tinyMce-placeholder" style="word-break: break-word;">Your Enquiry Details</span></h2>
+                                        <h2 style="margin: 0; color: #02735e; direction: ltr; font-family: 'Bitter', Georgia, Times, 'Times New Roman', serif; font-size: 30px; font-weight: 400; letter-spacing: normal; line-height: 1.2; text-align: left; margin-top: 0; margin-bottom: 0; mso-line-height-alt: 36px;"><span class="tinyMce-placeholder" style="word-break: break-word;">${isRecipient ? "Your" : "Their"} Enquiry Details</span></h2>
                                     </td>
                                 </tr>
                             </table>
@@ -21,7 +17,9 @@ function Contact() {
                                             <thead style="vertical-align: top; background-color: transparent; color: #101112; font-size: 16px; line-height: 1.2; mso-line-height-alt: 19px;">
                                                 <tr>
                                                     <th width="50%" style="padding: 10px; word-break: break-word; font-weight: 700; border-top: 0px solid #dddddd; border-right: 0px solid #dddddd; border-bottom: 0px solid #dddddd; border-left: 0px solid #dddddd; text-align: left;">Inquiry Type: ${inquiryType}</th>
-                                                    <th width="50%" style="padding: 10px; word-break: break-word; font-weight: 700; border-top: 0px solid #dddddd; border-right: 0px solid #dddddd; border-bottom: 0px solid #dddddd; border-left: 0px solid #dddddd; text-align: left;">&#8203;</th>
+                                                    ${isRecipient? 
+                                                    `<th width="50%" style="padding: 10px; word-break: break-word; font-weight: 700; border-top: 0px solid #dddddd; border-right: 0px solid #dddddd; border-bottom: 0px solid #dddddd; border-left: 0px solid #dddddd; text-align: left;">${email !== null ? "Your Email: "+ email: "&#8203;"}</th>`:
+												`<th width="50%" style="padding: 10px; word-break: break-word; font-weight: 700; border-top: 0px solid #dddddd; border-right: 0px solid #dddddd; border-bottom: 0px solid #dddddd; border-left: 0px solid #dddddd; text-align: left;">${email !== null ? "Customer Email: "+ email: "&#8203;"}</th>`}
                                                 </tr>
                                             </thead>
                                             <tbody style="vertical-align: top; font-size: 16px; line-height: 1.2; mso-line-height-alt: 19px;">
@@ -38,7 +36,7 @@ function Contact() {
                                 <tr>
                                     <td class="pad">
                                         <div style="color:#02735e;direction:ltr;font-family:'Bitter', Georgia, Times, 'Times New Roman', serif;font-size:23px;font-weight:700;letter-spacing:0px;line-height:1.2;text-align:left;mso-line-height-alt:28px;">
-                                            <p style="margin: 0;">Your Message:</p>
+                                            <p style="margin: 0;">${isRecipient ? "Your" : "Their"} Message:</p>
                                         </div>
                                     </td>
                                 </tr>
@@ -54,7 +52,7 @@ function Contact() {
                     </table>`;
     };
 
-    const generateHtml = (name: string, email: string, orderRef: string, inquiryType: string, subject: string, message: string) => {
+    const generateHtml = (name: string, email: string, orderRef: string, inquiryType: string, message: string, isRecipient:boolean) => {
     const styles = `
     * {
 			box-sizing: border-box;
@@ -138,7 +136,60 @@ function Contact() {
 			}
 		}
     `
-    
+
+        const heading = `<table class="heading_block block-1" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+														<tr>
+															<td class="pad">
+																<h1 style="margin: 0; color: #02735e; direction: ltr; font-family: 'Bitter', Georgia, Times, 'Times New Roman', serif; font-size: 38px; font-weight: 400; letter-spacing: normal; line-height: 1.2; text-align: center; margin-top: 0; margin-bottom: 0; mso-line-height-alt: 46px;"><span class="tinyMce-placeholder" style="word-break: break-word;">Thank you for your Enquiry!</span></h1>
+															</td>
+														</tr>
+													</table>`
+
+        const altHeading = `<table class="heading_block block-1" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+														<tr>
+															<td class="pad">
+																<h1 style="margin: 0; color: #02735e; direction: ltr; font-family: 'Bitter', Georgia, Times, 'Times New Roman', serif; font-size: 38px; font-weight: 400; letter-spacing: normal; line-height: 1.2; text-align: center; margin-top: 0; margin-bottom: 0; mso-line-height-alt: 46px;"><span class="tinyMce-placeholder" style="word-break: break-word;">Received a new Enquiry</span></h1>
+															</td>
+														</tr>
+													</table>`
+        
+        const emailContent = `<table class="paragraph_block block-2" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+														<tr>
+															<td class="pad">
+																<div style="color:#444a5b;direction:ltr;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:16px;font-weight:400;letter-spacing:0px;line-height:1.2;text-align:left;mso-line-height-alt:19px;">
+																	<p style="margin: 0; margin-bottom: 16px;">Dear ${name},<br><br>Thank you for reaching out to us via our contact form. We’ve received your message and a member of our team will get back to you as soon as possible—typically within 1-2 business days.<br><br>If your enquiry is urgent, please feel free to contact us directly at <a href="mailto:info@sanvitahealth.co.uk" target="_blank" title="info@sanvitahealth.co.uk" style="text-decoration: underline; color: #7747ff;" rel="noopener">info@sanvitahealth.co.uk.</a><br><br>We appreciate your interest and look forward to assisting you.</p>
+																	<p style="margin: 0; margin-bottom: 16px;">Best Regards,</p>
+																	<p style="margin: 0;">Sanvita Health</p>
+																</div>
+															</td>
+														</tr>
+													</table>`
+        
+        const altEmailContent = `<table class="paragraph_block block-2" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+														<tr>
+															<td class="pad">
+																<div style="color:#444a5b;direction:ltr;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:16px;font-weight:400;letter-spacing:0px;line-height:1.2;text-align:left;mso-line-height-alt:19px;">
+																	<p style="margin: 0; margin-bottom: 16px;">You have received an enquiry from ${name}. Their contact email provided is <a href="mailto:${email}">${email}</a>.</p>
+                                                                    <p style="margin: 0; margin-bottom: 16px;">Please review the details below:</p>
+																</div>
+															</td>
+														</tr>
+													</table>`
+
+        const websiteButton = `<table class="button_block block-3" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+														<tr>
+															<td class="pad">
+																<div class="alignment" align="center"><a href="www.sanvitahealth.co.uk" target="_blank" style="color:#02735e;text-decoration:none;"><!--[if mso]>
+<v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word"  href="www.sanvitahealth.co.uk"  style="height:42px;width:159px;v-text-anchor:middle;" arcsize="10%" fillcolor="#e4f0d0">
+<v:stroke dashstyle="Solid" weight="0px" color="#e4f0d0"/>
+<w:anchorlock/>
+<v:textbox inset="0px,0px,0px,0px">
+<center dir="false" style="color:#02735e;font-family:sans-serif;font-size:16px">
+<![endif]--><span class="button" style="background-color: #e4f0d0; border-bottom: 0px solid transparent; border-left: 0px solid transparent; border-radius: 4px; border-right: 0px solid transparent; border-top: 0px solid transparent; color: #02735e; display: inline-block; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; font-weight: 400; mso-border-alt: none; padding-bottom: 5px; padding-top: 5px; padding-left: 20px; padding-right: 20px; text-align: center; width: auto; word-break: keep-all; letter-spacing: normal;"><span style="word-break: break-word; line-height: 32px;">Visit our Website</span></span><!--[if mso]></center></v:textbox></v:roundrect><![endif]--></a></div>
+															</td>
+														</tr>
+													</table>`
+
         return `
         <style>${styles}</style>
         <table class="nl-container" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #FFFFFF;">
@@ -153,37 +204,9 @@ function Contact() {
 										<tbody>
 											<tr>
 												<td class="column column-1" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top;">
-													<table class="heading_block block-1" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-														<tr>
-															<td class="pad">
-																<h1 style="margin: 0; color: #02735e; direction: ltr; font-family: 'Bitter', Georgia, Times, 'Times New Roman', serif; font-size: 38px; font-weight: 400; letter-spacing: normal; line-height: 1.2; text-align: center; margin-top: 0; margin-bottom: 0; mso-line-height-alt: 46px;"><span class="tinyMce-placeholder" style="word-break: break-word;">Thank you for your Enquiry!</span></h1>
-															</td>
-														</tr>
-													</table>
-													<table class="paragraph_block block-2" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
-														<tr>
-															<td class="pad">
-																<div style="color:#444a5b;direction:ltr;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:16px;font-weight:400;letter-spacing:0px;line-height:1.2;text-align:left;mso-line-height-alt:19px;">
-																	<p style="margin: 0; margin-bottom: 16px;">Dear ${name},<br><br>Thank you for reaching out to us via our contact form. We’ve received your message and a member of our team will get back to you as soon as possible—typically within 1-2 business days.<br><br>If your enquiry is urgent, please feel free to contact us directly at <a href="mailto:info@sanvitahealth.co.uk" target="_blank" title="info@sanvitahealth.co.uk" style="text-decoration: underline; color: #7747ff;" rel="noopener">info@sanvitahealth.co.uk.</a><br><br>We appreciate your interest and look forward to assisting you.</p>
-																	<p style="margin: 0; margin-bottom: 16px;">Best Regards,</p>
-																	<p style="margin: 0;">Sanvita Health</p>
-																</div>
-															</td>
-														</tr>
-													</table>
-													<table class="button_block block-3" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-														<tr>
-															<td class="pad">
-																<div class="alignment" align="center"><a href="www.sanvitahealth.co.uk" target="_blank" style="color:#02735e;text-decoration:none;"><!--[if mso]>
-<v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word"  href="www.sanvitahealth.co.uk"  style="height:42px;width:159px;v-text-anchor:middle;" arcsize="10%" fillcolor="#e4f0d0">
-<v:stroke dashstyle="Solid" weight="0px" color="#e4f0d0"/>
-<w:anchorlock/>
-<v:textbox inset="0px,0px,0px,0px">
-<center dir="false" style="color:#02735e;font-family:sans-serif;font-size:16px">
-<![endif]--><span class="button" style="background-color: #e4f0d0; border-bottom: 0px solid transparent; border-left: 0px solid transparent; border-radius: 4px; border-right: 0px solid transparent; border-top: 0px solid transparent; color: #02735e; display: inline-block; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; font-weight: 400; mso-border-alt: none; padding-bottom: 5px; padding-top: 5px; padding-left: 20px; padding-right: 20px; text-align: center; width: auto; word-break: keep-all; letter-spacing: normal;"><span style="word-break: break-word; line-height: 32px;">Visit our Website</span></span><!--[if mso]></center></v:textbox></v:roundrect><![endif]--></a></div>
-															</td>
-														</tr>
-													</table>
+													${isRecipient? heading: altHeading}
+													${isRecipient? emailContent: altEmailContent}
+													${isRecipient? websiteButton: ''}
 													<table class="divider_block block-4" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
 														<tr>
 															<td class="pad">
@@ -197,7 +220,7 @@ function Contact() {
 															</td>
 														</tr>
 													</table>
-													${constructEmailReceipt(name, email, orderRef, inquiryType, subject, message)}
+													${constructEmailReceipt(name, email, orderRef, inquiryType, message,isRecipient)}
 												</td>
 											</tr>
 										</tbody>
@@ -217,105 +240,72 @@ function Contact() {
     };
 
 
-
-    return (
-    <main className="contact">
-        <div className="contact-container">
-            <div className="contact-heading">
-                <h1 className="contact-title">Contact us</h1>          
-                
-            </div>
-         
-
-            <div className="contact-form">
-                <form onSubmit={async (e) => {
-                    e.preventDefault();
-              
-                                const nameInput = document.getElementById("name") as HTMLInputElement | null;
-                                const emailInput = document.getElementById("email") as HTMLInputElement | null;
-                                const orderRefInput = document.getElementById("order-ref") as HTMLInputElement | null;
-                                const inquiryTypeSelect = document.getElementById("inquiry-type") as HTMLSelectElement | null;
-                                const subjectInput = document.getElementById("subject") as HTMLInputElement | null;
-                                const messageInput = document.getElementById("message") as HTMLTextAreaElement | null;
-                                const honeyInput = document.getElementById("honey") as HTMLInputElement | null;
-
-                                const name = nameInput?.value || "";
-                                const email = emailInput?.value || "";
-                                const orderRef = orderRefInput?.value || "";
-                                let inquiryType = inquiryTypeSelect?.value || "";
-                                inquiryType = inquiryType[0].toUpperCase() + inquiryType.slice(1).replace(/-/g, " ");
-                                const subjectValue = subjectInput?.value || "";
-                                const message = messageInput?.value || "";
-                                const hiddenValue = honeyInput?.value || "";
-
-                                await fetch("/api/sendEmail", {
-                                    method: "POST",
-                                    headers: {
-                                        "Content-Type": "application/json",
-                                    },
-                                    body: JSON.stringify({
-                                        name,
-                                        orderRef,
-                                        inquiryType,
-                                        email,
-                                        subject:subjectValue,
-                                        text:message,
-                                        hiddenValue,
-                                    }),
-                                });
-                            }}>
-                    <div className="top-line">
-                        <div className="form-group">
-                            <label htmlFor="name">Name</label>
-                            <input type="text" id="name" name="name" placeholder="Enter your name" required />
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="email">Email</label>
-                            <input type="email" id="email" name="email" placeholder="someone@example.com"  required />
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="order-ref">Order Reference (if applicable)</label>
-                            <input type="text" id="order-ref" name="order-ref" />
-                        </div>
-                        <div className="form-group hidden">
-                            <label htmlFor="telephone">Telephone</label>
-                            <input type="tel" id="telephone" name="telephone" placeholder="Enter your telephone number" />
-                        </div>
-                        <input type="hidden" name="honey" id="honey" value={HIDDEN_VALUE} />
-                    </div>
-
-                    <div>
-                        <label htmlFor="inquiry-type">Inquiry Type</label>
-                        <select id="inquiry-type" name="inquiry-type" required>
-                            <option value="general">General Inquiry</option>
-                            <option value="technical">Technical Support</option>
-                            <option value="product">Product Inquiry</option>
-                            <option value="custom-order">Custom Order</option>
-                            <option value="feedback">Feedback</option>
-                        </select>
-                    </div>
-
-                    <div className="form-group">
-                        <label htmlFor="subject">Subject</label>
-                        <input type="text" id="subject" name="subject" placeholder="Enter the subject of your enquiry" required />
-                    </div>
-
-                    <div className="form-group">
-                        <label htmlFor="message">Message</label>
-                        <textarea id="message" name="message" placeholder="Enter your message" required></textarea>
-                    </div>
-                    <div className="button-container">
-                        <button
-                            type="submit"
-                            className="submit-button"
-                        >Send Message</button>
-                    </div>
-                    <p>Currently our contact form is under maintenance. If you have any enquiries, please email us directly at: <span className="footer-link"><a href="mailto:info@sanvitahealth.co.uk">info@sanvitahealth.co.uk</a></span></p>
-
-                </form>
-            </div>
-            </div>
-        </main>);
+export async function GET(request: Request) {
+  // For example, fetch data from your DB here
+  const users = [
+    { id: 1, name: 'Alice' },
+    { id: 2, name: 'Bob' }
+  ];
+  return new Response(JSON.stringify(users), {
+    status: 200,
+    headers: { 'Content-Type': 'application/json' }
+  });
 }
 
-export default Contact;
+export async function POST(request: Request) {
+	console.log('POST request received at /api/sendEmail');
+	
+    const body = await request.json();
+	console.log('Request body:', body);
+	console.log(body.hiddenValue, process.env.HIDDEN_VALUE);
+    if (body.telephone){
+        console.error('Telephone field is not allowed');
+        return new Response('Telephone field is not allowed', { status: 400 });
+    }
+    if (!body.email || !body.subject || !body.text) {
+        console.error('Missing required fields: email, subject, or text');
+        return new Response('Missing required fields', { status: 400 });
+    }
+
+    if (body.hiddenValue !== process.env.HIDDEN_VALUE) {
+        console.error('Invalid hidden value');
+        return new Response('Invalid hidden value', { status: 400 });
+    }
+
+    const htmlContent = generateHtml(
+        body.name || 'Customer',
+        body.email,
+        body.orderRef || '',
+        body.inquiryType || 'General',
+        body.subject,
+        body.text
+    );
+	const mailOptions = {
+		email: process.env.SMTP_SERVER_USERNAME as string,
+		sendTo: body.email || process.env.SITE_MAIL_RECIEVER,
+		subject: "Thank you for Contacting Sanvita Health!",
+		text: body.text,
+		html: htmlContent,
+	};
+
+	const altHtmlContent = generateHtml(
+		body.name || 'Customer',
+		body.email,
+		body.orderRef || '',
+		body.inquiryType || 'General',
+		body.text,
+		false
+	);
+
+	const altMailOptions ={
+		email: process.env.SMTP_SERVER_USERNAME as string,
+		subject: "New Enquiry Received: " + body.subject,
+		text: body.text,
+		html: altHtmlContent,
+	};
+
+	await Promise.all([sendMail(altMailOptions), sendMail(mailOptions)]);
+
+    console.log('Email sent successfully to', body.email);
+    return new Response('POST request received');
+}
