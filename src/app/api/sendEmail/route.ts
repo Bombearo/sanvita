@@ -281,7 +281,6 @@ export async function POST(request: Request) {
         body.text
     );
 	const mailOptions = {
-		email: process.env.SMTP_SERVER_USERNAME as string,
 		sendTo: body.email || process.env.SITE_MAIL_RECIEVER,
 		subject: "Thank you for Contacting Sanvita Health!",
 		text: body.text,
@@ -297,8 +296,7 @@ export async function POST(request: Request) {
 		false
 	);
 
-	const altMailOptions ={
-		email: process.env.SMTP_SERVER_USERNAME as string,
+	const altMailOptions = {
 		subject: "New Enquiry Received: " + body.subject,
 		text: body.text,
 		html: altHtmlContent,
